@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%23d4af37'>💎</text></svg>">
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%23707070'>💎</text></svg>">
     <title>Clínica Burgarelli - Beleza Natural com Ciência</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,20 +17,20 @@
         }
 
         :root {
-            --primary-blue: #2c5aa0;
-            --secondary-blue: #4a7ba7;
-            --light-blue: #6b9fc7;
-            --dark-blue: #1e3f5a;
-            --very-dark-blue: #0f1f2e;
-            --accent-blue: #3a6db5;
+            --primary-blue: #505050;
+            --secondary-blue: #ffffff;
+            --light-blue: #f0f0f0;
+            --dark-blue: #2a2a2a;
+            --very-dark-blue: #1a1a1a;
+            --accent-blue: #606060;
             --luxury-black: #0a0a0a;
             --dark-black: #1a1a1a;
             --light-gray: #d4d4d4;
             --white: #ffffff;
             --text-dark: #333333;
             --whatsapp-green: #25d366;
-            --gold: #d4af37;
-            --light-gold: #e8d4a8;
+            --gold: #e8e8e8;
+            --light-gold: #f5f5f5;
         }
 
         /* ===== ANIMAÇÕES ===== */
@@ -80,10 +80,10 @@
 
         @keyframes glowPulse {
             0%, 100% {
-                box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
             }
             50% {
-                box-shadow: 0 0 40px rgba(212, 175, 55, 0.6);
+                box-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
             }
         }
 
@@ -113,7 +113,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: var(--text-dark);
             line-height: 1.6;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f1f2e 100%);
+            background: #000000;
             background-attachment: fixed;
             position: relative;
         }
@@ -126,21 +126,21 @@
             width: 100%;
             height: 100%;
             background-image: 
-                radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 50%, rgba(44, 90, 160, 0.05) 0%, transparent 50%);
+                radial-gradient(circle at 20% 50%, rgba(232, 232, 232, 0.01) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(232, 232, 232, 0.01) 0%, transparent 50%);
             pointer-events: none;
             z-index: 0;
         }
 
         /* ===== HEADER / NAVEGAÇÃO ===== */
         header {
-            background: linear-gradient(135deg, var(--luxury-black) 0%, var(--dark-black) 50%, var(--primary-blue) 100%);
+            background: #000000;
             padding: 20px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(212, 175, 55, 0.3);
-            border-bottom: 2px solid var(--gold);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            border-bottom: none;
             animation: slideInDown 0.6s ease-out;
         }
 
@@ -176,13 +176,14 @@
         .logo img {
             height: 70px;
             width: auto;
-            filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.3));
+            filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.1));
             animation: slideInLeft 0.7s ease-out;
             transition: transform 0.3s ease;
         }
 
         .logo img:hover {
             transform: scale(1.05);
+            filter: drop-shadow(0 4px 12px rgba(255, 255, 255, 0.2));
         }
 
         nav {
@@ -218,7 +219,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--gold);
+            background: #ffffff;
             transition: width 0.3s ease;
         }
 
@@ -227,37 +228,37 @@
         }
 
         nav a:hover {
-            color: var(--light-blue);
+            color: #e8e8e8;
         }
 
         .nav-cta-button {
-            background: linear-gradient(135deg, var(--gold) 0%, var(--light-gold) 100%);
-            color: var(--luxury-black);
+            background: #000000;
+            color: #ffffff;
             padding: 12px 30px;
             border-radius: 25px;
             text-decoration: none;
             font-weight: 700;
             font-size: 12px;
             transition: all 0.3s ease;
-            border: 2px solid var(--gold);
+            border: none;
             cursor: pointer;
             text-transform: uppercase;
             letter-spacing: 0.8px;
             white-space: nowrap;
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
             animation: slideInRight 0.8s ease-out;
         }
 
         .nav-cta-button:hover {
-            background: linear-gradient(135deg, var(--light-gold) 0%, var(--gold) 100%);
+            background: #000000;
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.5);
-            border-color: var(--light-gold);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+            border-color: transparent;
         }
 
         /* ===== HERO SECTION ===== */
         .hero {
-            background: linear-gradient(135deg, var(--dark-black) 0%, var(--luxury-black) 30%, var(--primary-blue) 100%);
+            background: #000000;
             padding: 0;
             color: var(--white);
             position: relative;
@@ -266,7 +267,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border-bottom: 3px solid var(--gold);
+            border-bottom: none;
             animation: fadeInUp 1s ease-out;
         }
 
@@ -277,7 +278,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(90deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.5) 50%, transparent 100%);
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 0.6) 100%);
             pointer-events: none;
             z-index: 2;
         }
@@ -337,11 +338,11 @@
 
         /* ===== SECTION: TRANSFORMAÇÕES ===== */
         .transformations {
-            background: linear-gradient(135deg, var(--luxury-black) 0%, var(--dark-black) 50%, var(--very-dark-blue) 100%);
+            background: #000000;
             padding: 60px 20px;
             color: var(--white);
-            border-top: 2px solid var(--gold);
-            border-bottom: 2px solid var(--gold);
+            border-top: none;
+            border-bottom: none;
         }
 
         .transformations-content {
@@ -356,10 +357,7 @@
             letter-spacing: 2px;
             margin-bottom: 15px;
             text-transform: uppercase;
-            background: linear-gradient(135deg, var(--light-gold) 0%, var(--gold) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #ffffff;
         }
 
         .transformations p {
@@ -378,14 +376,15 @@
         }
 
         .gallery-item {
-            background: rgba(255, 255, 255, 0.08);
+            background: #1a1a1a;
             aspect-ratio: 1/1;
             border-radius: 8px;
             overflow: hidden;
             backdrop-filter: blur(10px);
             transition: transform 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
             animation: scaleIn 0.5s ease forwards;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .gallery-item:nth-child(1) { animation-delay: 0.05s; }
@@ -395,7 +394,8 @@
 
         .gallery-item:hover {
             transform: scale(1.05);
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
+            background: #252525;
         }
 
         .gallery-item img,
@@ -417,7 +417,7 @@
 
         .gallery-item:hover {
             transform: translateY(-8px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
         }
 
         /* ===== CAROUSEL DOTS ===== */
@@ -432,10 +432,11 @@
             width: 12px;
             height: 12px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.5);
             cursor: pointer;
             transition: all 0.3s ease;
             animation: scaleIn 0.5s ease forwards;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .dot:nth-child(1) { animation-delay: 0.1s; }
@@ -445,14 +446,16 @@
 
         .dot:hover {
             transform: scale(1.3);
-            background: var(--gold);
+            background: #ffffff;
+            border-color: #ffffff;
         }
 
         .dot.active {
-            background: var(--white);
+            background: #ffffff;
             width: 30px;
             border-radius: 6px;
             animation: pulse 0.6s ease-out;
+            border-color: #ffffff;
         }
 
         @keyframes pulse {
@@ -469,10 +472,10 @@
 
         /* ===== PROCEDIMENTOS SECTION ===== */
         .procedures {
-            background: linear-gradient(135deg, var(--dark-black) 0%, var(--luxury-black) 50%, var(--very-dark-blue) 100%);
+            background: #000000;
             padding: 60px 20px;
             color: var(--white);
-            border-top: 2px solid var(--gold);
+            border-top: none;
         }
 
         .procedures-content {
@@ -488,11 +491,8 @@
             margin-bottom: 40px;
             text-transform: uppercase;
             padding-bottom: 20px;
-            border-bottom: 3px solid var(--gold);
-            background: linear-gradient(135deg, var(--light-gold) 0%, var(--gold) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+            color: #ffffff;
         }
 
         .procedures-grid {
@@ -502,16 +502,17 @@
         }
 
         .procedure-card {
-            background: linear-gradient(135deg, rgba(0,0,0,0.4), rgba(212,175,55,0.05));
+            background: #1a1a1a;
             padding: 25px;
             border-radius: 8px;
             border-left: 4px solid rgba(255, 255, 255, 0.25);
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
             display: flex;
             flex-direction: column;
             animation: slideUp 0.6s ease forwards;
+            cursor: pointer;
         }
 
         .procedure-card:nth-child(1) { animation-delay: 0.05s; }
@@ -528,10 +529,10 @@
         .procedure-card:nth-child(12) { animation-delay: 0.6s; }
 
         .procedure-card:hover {
-            background: rgba(255, 255, 255, 0.12);
-            transform: translateY(-5px);
-            border-left-color: rgba(255, 255, 255, 0.6);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            background: #252525;
+            transform: translateY(-5px) scale(1.02);
+            border-left-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 12px 35px rgba(255, 255, 255, 0.15);
         }
 
         .procedure-card h3 {
@@ -572,12 +573,12 @@
 
         /* ===== WHATSAPP CTA ===== */
         .whatsapp-cta {
-            background: linear-gradient(135deg, var(--dark-black) 0%, var(--primary-blue) 100%);
+            background: #000000;
             padding: 40px 20px;
             text-align: center;
             color: var(--white);
-            border-top: 2px solid var(--gold);
-            border-bottom: 2px solid var(--gold);
+            border-top: none;
+            border-bottom: none;
         }
 
         .whatsapp-container {
@@ -623,8 +624,8 @@
 
         /* ===== PRODUTOS SECTION ===== */
         .produtos-section {
-            background: linear-gradient(135deg, var(--dark-black) 0%, var(--luxury-black) 50%, var(--primary-blue) 100%);
-            padding: 60px 20px; border-top: 2px solid var(--gold);
+            background: #000000;
+            padding: 60px 20px; border-top: none;
             color: var(--white);
         }
 
@@ -656,14 +657,15 @@
         }
 
         .produto-card {
-            background: rgba(255, 255, 255, 0.08);
+            background: #1a1a1a;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.08);
             transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
             animation: slideInLeft 0.6s ease forwards;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .produto-card:nth-child(1) { animation-delay: 0.1s; }
@@ -672,8 +674,8 @@
 
         .produto-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 8px 30px rgba(255, 255, 255, 0.1);
+            background: #252525;
         }
 
         .produto-image {
@@ -728,7 +730,7 @@
         }
 
         .produto-button {
-            background: linear-gradient(135deg, #e8d4a8 0%, #d4af37 50%, #c9a961 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 50%, #e8e8e8 100%);
             color: #333333;
             padding: 10px 20px;
             border-radius: 6px;
@@ -736,19 +738,19 @@
             font-weight: 600;
             font-size: 12px;
             transition: all 0.3s ease;
-            border: 1px solid #c9a961;
+            border: none;
             cursor: pointer;
             text-transform: uppercase;
             letter-spacing: 0.3px;
             display: inline-block;
-            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.5);
             text-align: center;
         }
 
         .produto-button:hover {
-            background: linear-gradient(135deg, #f0deb8 0%, #e8d4a8 50%, #d4af37 100%);
+            background: linear-gradient(135deg, #f0f0f0 0%, #e8e8e8 50%, #d8d8d8 100%);
             transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(212, 175, 55, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+            box-shadow: 0 6px 16px rgba(255, 255, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.6);
         }
 
         /* ===== MODALS DOS CURSOS ===== */
@@ -767,7 +769,7 @@
         }
 
         .modal-content {
-            background: linear-gradient(135deg, var(--dark-black) 0%, var(--luxury-black) 30%, var(--primary-blue) 80%, var(--secondary-blue) 100%);
+            background: #1a1a1a;
             margin: 3% auto;
             padding: 0;
             border-radius: 20px;
@@ -775,14 +777,12 @@
             max-width: 950px;
             color: var(--white);
             box-shadow: 
-                0 30px 80px rgba(0, 0, 0, 0.7),
-                0 0 80px rgba(212, 175, 55, 0.3),
-                0 0 40px rgba(44, 90, 160, 0.4),
-                inset 0 1px 0 rgba(212, 175, 55, 0.2);
+                0 30px 80px rgba(0, 0, 0, 0.8),
+                0 0 40px rgba(255, 255, 255, 0.1);
             animation: slideDown 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
             max-height: 85vh;
             overflow-y: auto;
-            border: 2px solid var(--gold);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             position: relative;
             overflow-x: hidden;
         }
@@ -792,18 +792,18 @@
         }
 
         .modal-content::-webkit-scrollbar-track {
-            background: rgba(212, 175, 55, 0.05);
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 10px;
         }
 
         .modal-content::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, var(--gold) 0%, var(--light-gold) 100%);
+            background: linear-gradient(180deg, #b0b0b0 0%, #d0d0d0 100%);
             border-radius: 10px;
-            border: 2px solid rgba(212, 175, 55, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.1);
         }
 
         .modal-content::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(180deg, var(--light-gold) 0%, var(--gold) 100%);
+            background: linear-gradient(180deg, #d0d0d0 0%, #b0b0b0 100%);
         }
 
         .modal-content::before {
@@ -813,7 +813,7 @@
             left: 0;
             right: 0;
             height: 200px;
-            background: linear-gradient(180deg, rgba(212, 175, 55, 0.2) 0%, transparent 100%);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, transparent 100%);
             pointer-events: none;
             z-index: 1;
         }
@@ -825,7 +825,7 @@
             left: 0;
             right: 0;
             height: 100px;
-            background: linear-gradient(180deg, transparent 0%, rgba(44, 90, 160, 0.2) 100%);
+            background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.05) 100%);
             pointer-events: none;
         }
 
@@ -852,8 +852,8 @@
             z-index: 2;
             margin-bottom: 0;
             padding: 50px 40px 30px;
-            background: linear-gradient(135deg, rgba(44, 90, 160, 0.3) 0%, rgba(74, 123, 167, 0.2) 100%);
-            border-bottom: 2px solid rgba(212, 175, 55, 0.4);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(74, 123, 167, 0.2) 100%);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.15);
             text-align: center;
         }
 
@@ -864,12 +864,8 @@
             letter-spacing: 3px;
             margin: 0 0 20px 0;
             font-family: 'Playfair Display', serif;
-            color: #fff;
+            color: #ffffff;
             text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-            background: linear-gradient(135deg, #ffffff 0%, #e8d4a8 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
         .modal-subtitle {
@@ -879,12 +875,12 @@
             opacity: 0.85;
             font-style: italic;
             margin: 0;
-            color: rgba(232, 212, 168, 0.8);
+            color: rgba(255, 255, 255, 0.8);
             font-family: 'Montserrat', sans-serif;
         }
 
         .modal-close {
-            color: rgba(232, 212, 168, 0.9);
+            color: rgba(255, 255, 255, 0.9);
             position: absolute;
             right: 35px;
             top: 30px;
@@ -898,8 +894,8 @@
             align-items: center;
             justify-content: center;
             border-radius: 50%;
-            background: rgba(44, 90, 160, 0.3);
-            border: 2px solid rgba(212, 175, 55, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
             z-index: 10;
             animation: slideInRight 0.5s ease-out;
         }
@@ -929,8 +925,8 @@
             height: 280px;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-            border: 2px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(255, 255, 255, 0.2);
             animation: slideInLeft 0.6s ease-out;
             transition: transform 0.3s ease;
         }
@@ -968,10 +964,10 @@
         }
 
         .info-card {
-            background: rgba(212, 175, 55, 0.08);
+            background: rgba(255, 255, 255, 0.08);
             padding: 25px;
             border-radius: 10px;
-            border-left: 4px solid var(--gold);
+            border-left: none;
             backdrop-filter: blur(10px);
             animation: slideInRight 0.6s ease forwards;
             transition: all 0.3s ease;
@@ -981,15 +977,15 @@
         .info-card:nth-child(2) { animation-delay: 0.3s; }
 
         .info-card:hover {
-            background: rgba(212, 175, 55, 0.15);
+            background: rgba(255, 255, 255, 0.12);
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.2);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.12);
         }
 
         .info-card h4 {
             font-size: 18px;
             font-weight: 700;
-            color: var(--gold);
+            color: #ffffff;
             margin-bottom: 12px;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -1003,14 +999,14 @@
 
         .price-label {
             font-size: 14px;
-            color: var(--gold);
+            color: #ffffff;
             margin-right: 5px;
         }
 
         .price-value {
             font-size: 32px;
             font-weight: 700;
-            color: var(--gold);
+            color: #ffffff;
         }
 
         .price-note {
@@ -1050,13 +1046,13 @@
         .tab-button:nth-child(3) { animation-delay: 0.3s; }
 
         .tab-button:hover {
-            color: var(--gold);
+            color: #ffffff;
             transform: translateY(-3px);
         }
 
         .tab-button.active {
-            color: var(--gold);
-            border-bottom-color: var(--gold);
+            color: #ffffff;
+            border-bottom-color: #ffffff;
         }
 
         .tab-content {
@@ -1080,10 +1076,10 @@
         }
 
         .pagamento-opcao {
-            background: rgba(212, 175, 55, 0.08);
+            background: rgba(255, 255, 255, 0.08);
             padding: 20px;
             border-radius: 10px;
-            border: 1px solid rgba(212, 175, 55, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             text-align: center;
             transition: all 0.3s ease;
             animation: scaleIn 0.5s ease forwards;
@@ -1094,17 +1090,17 @@
         .pagamento-opcao:nth-child(3) { animation-delay: 0.3s; }
 
         .pagamento-opcao:hover {
-            background: rgba(212, 175, 55, 0.15);
-            border-color: var(--gold);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: transparent;
             transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.2);
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.12);
         }
 
         .pagamento-opcao h4 {
             font-size: 16px;
             font-weight: 700;
             margin-bottom: 10px;
-            color: var(--gold);
+            color: #ffffff;
         }
 
         .opcao-preco {
@@ -1120,10 +1116,10 @@
         }
 
         .pagamento-nota {
-            background: rgba(212, 175, 55, 0.05);
+            background: rgba(255, 255, 255, 0.05);
             padding: 15px;
             border-radius: 8px;
-            border-left: 3px solid var(--gold);
+            border-left: none;
             font-size: 13px;
             margin-top: 20px;
             line-height: 1.6;
@@ -1145,7 +1141,7 @@
             position: relative;
             z-index: 2;
             font-family: 'Playfair Display', serif;
-            color: var(--gold);
+            color: #ffffff;
         }
 
         .modal-section-title::after {
@@ -1155,7 +1151,7 @@
             left: 0;
             width: 60px;
             height: 3px;
-            background: linear-gradient(90deg, var(--gold) 0%, transparent 100%);
+            background: linear-gradient(90deg, #ffffff 0%, transparent 100%);
             border-radius: 2px;
         }
 
@@ -1165,9 +1161,10 @@
             padding: 25px;
             position: relative;
             z-index: 2;
-            background: rgba(212, 175, 55, 0.08);
+            background: rgba(255, 255, 255, 0.08);
             border-radius: 10px;
-            border-left: 4px solid var(--gold);
+            border-left: none;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             animation: slideInLeft 0.6s ease-out;
         }
@@ -1211,8 +1208,8 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            background: linear-gradient(135deg, var(--gold) 0%, var(--light-gold) 50%, var(--primary-blue) 100%);
-            color: var(--luxury-black);
+            background: linear-gradient(135deg, #1ead50 0%, #25d366 50%, #15a844 100%);
+            color: #ffffff;
             padding: 16px 40px;
             border-radius: 50px;
             text-decoration: none;
@@ -1220,12 +1217,11 @@
             font-size: 14px;
             transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             box-shadow: 
-                0 15px 40px rgba(212, 175, 55, 0.4),
-                0 0 20px rgba(212, 175, 55, 0.3),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+                0 15px 40px rgba(37, 211, 102, 0.3),
+                0 0 20px rgba(37, 211, 102, 0.2);
             text-transform: uppercase;
             letter-spacing: 0.8px;
-            border: 2px solid var(--gold);
+            border: none;
             cursor: pointer;
             width: auto;
             margin: 40px 50px 50px 50px;
@@ -1261,9 +1257,8 @@
             transform: translateY(-5px);
             box-shadow: 
                 0 25px 50px rgba(37, 211, 102, 0.5),
-                0 0 30px rgba(37, 211, 102, 0.3),
-                inset 0 1px 0 rgba(255, 255, 255, 0.4);
-            background: linear-gradient(135deg, #1ead50 0%, #15a844 50%, #0d7a2f 100%);
+                0 0 30px rgba(37, 211, 102, 0.4);
+            background: linear-gradient(135deg, #0d7a2f 0%, #15a844 50%, #1ead50 100%);
         }
 
         .modal-button-whatsapp i {
@@ -1295,8 +1290,8 @@
 
         /* ===== DETALHES DOS CURSOS ===== */
         .curso-detalhes-section {
-            background: linear-gradient(135deg, var(--dark-black) 0%, var(--luxury-black) 50%, var(--primary-blue) 100%);
-            padding: 60px 20px; border-top: 2px solid var(--gold);
+            background: #000000;
+            padding: 60px 20px; border-top: none;
             color: var(--white);
         }
 
@@ -1384,7 +1379,7 @@
 
         /* ===== DRA WENDREA SECTION ===== */
         .dra-wendrea {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            background: #000000;
             padding: 0;
             animation: fadeInUp 0.8s ease-out;
         }
@@ -1405,6 +1400,7 @@
             flex-direction: column;
             justify-content: center;
             animation: slideInLeft 0.8s ease-out;
+            background: #1a1a1a;
         }
 
         .dra-name {
@@ -1493,10 +1489,10 @@
 
         /* ===== ESPECIALISTA SECTION ===== */
         .especialista-section {
-            background: linear-gradient(135deg, var(--dark-black) 0%, var(--luxury-black) 50%, var(--primary-blue) 100%);
+            background: #000000;
             padding: 60px 20px;
             color: var(--white);
-            border-top: 2px solid var(--gold);
+            border-top: none;
         }
 
         .especialista-content {
@@ -1521,14 +1517,14 @@
         }
 
         .curso-card {
-            background: linear-gradient(135deg, var(--dark-black) 0%, #1a1a2e 100%);
+            background: #1a1a1a;
             border-radius: 0;
             overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 8px 30px rgba(255, 255, 255, 0.05);
             transition: all 0.4s ease;
             display: flex;
             flex-direction: column;
-            border: none;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             animation: scaleIn 0.6s ease forwards;
         }
 
@@ -1538,7 +1534,8 @@
 
         .curso-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 50px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 15px 50px rgba(255, 255, 255, 0.1);
+            background: #252525;
         }
 
         .curso-image {
@@ -1569,7 +1566,7 @@
         }
 
         .curso-info {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            background: #1a1a1a;
             padding: 25px;
             text-align: center;
             flex-grow: 1;
@@ -1578,6 +1575,7 @@
             justify-content: space-between;
             border-top: none;
             margin-top: 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .curso-nome {
@@ -1590,7 +1588,7 @@
         }
 
         .curso-button {
-            background: linear-gradient(135deg, #e8d4a8 0%, #d4af37 50%, #c9a961 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 50%, #e8e8e8 100%);
             color: #333333;
             padding: 10px 20px;
             border-radius: 6px;
@@ -1598,27 +1596,27 @@
             font-weight: 600;
             font-size: 12px;
             transition: all 0.3s ease;
-            border: 1px solid #c9a961;
+            border: none;
             cursor: pointer;
             text-transform: uppercase;
             letter-spacing: 0.3px;
             display: inline-block;
             margin-top: 10px;
-            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.5);
             animation: slideUp 0.6s ease-out;
         }
 
         .curso-button:hover {
-            background: linear-gradient(135deg, #f0deb8 0%, #e8d4a8 50%, #d4af37 100%);
+            background: linear-gradient(135deg, #f0f0f0 0%, #e8e8e8 50%, #d8d8d8 100%);
             transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(212, 175, 55, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+            box-shadow: 0 6px 16px rgba(255, 255, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.6);
         }
 
         /* ===== AVALIAÇÕES SECTION ===== */
         .avaliacoes-section {
-            background: linear-gradient(135deg, var(--dark-black) 0%, var(--luxury-black) 50%, var(--primary-blue) 100%);
+            background: #000000;
             padding: 60px 20px; 
-            border-top: 2px solid var(--gold);
+            border-top: none;
             color: var(--white);
             animation: fadeInUp 0.8s ease-out;
         }
@@ -1652,13 +1650,14 @@
         }
 
         .avaliacao-card {
-            background: rgba(255, 255, 255, 0.08);
+            background: #1a1a1a;
             padding: 25px;
             border-radius: 8px;
-            border-left: 4px solid var(--gold);
+            border-left: none;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
             display: none;
             animation: fadeInUp 0.5s ease forwards;
         }
@@ -1674,9 +1673,9 @@
         .avaliacao-card:nth-child(3) { animation-delay: 0.3s; }
 
         .avaliacao-card:hover {
-            background: rgba(255, 255, 255, 0.12);
+            background: #252525;
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
         }
 
         .avaliacao-header {
@@ -1694,7 +1693,7 @@
         }
 
         .avaliacao-stars {
-            color: var(--gold);
+            color: #ffffff;
             font-size: 13px;
             letter-spacing: 2px;
         }
@@ -1722,10 +1721,10 @@
             width: 10px;
             height: 10px;
             border-radius: 50%;
-            background: rgba(212, 175, 55, 0.3);
+            background: rgba(255, 255, 255, 0.5);
             cursor: pointer;
             transition: all 0.3s ease;
-            border: 2px solid var(--gold);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             animation: scaleIn 0.5s ease forwards;
         }
 
@@ -1735,14 +1734,16 @@
         .dot-avaliacao:nth-child(4) { animation-delay: 0.25s; }
 
         .dot-avaliacao.active {
-            background: var(--gold);
+            background: #ffffff;
             transform: scale(1.2);
             animation: glowPulse 0.6s ease-out;
+            border-color: #ffffff;
         }
 
         .dot-avaliacao:hover {
-            background: var(--gold);
+            background: #ffffff;
             transform: scale(1.3);
+            border-color: #ffffff;
         }
 
         .google-logo {
@@ -1772,10 +1773,10 @@
 
         /* ===== FOOTER ===== */
         .footer {
-            background: linear-gradient(135deg, var(--luxury-black) 0%, var(--dark-black) 50%, var(--very-dark-blue) 100%);
+            background: #000000;
             padding: 50px 20px;
             color: var(--light-gray);
-            border-top: 3px solid var(--gold);
+            border-top: none;
             animation: slideUp 0.8s ease-out;
         }
 
@@ -1814,13 +1815,14 @@
         }
 
         .footer-section a {
-            color: var(--light-blue);
+            color: #e8e8e8;
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         .footer-section a:hover {
-            color: var(--white);
+            color: #ffffff;
+            text-decoration: underline;
         }
 
         .footer-bottom {
@@ -1834,7 +1836,7 @@
         .footer-security {
             margin-top: 20px;
             padding-top: 20px;
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1849,7 +1851,7 @@
 
         .footer-security span {
             font-size: 11px;
-            color: var(--gold);
+            color: #ffffff;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
@@ -1863,7 +1865,7 @@
         .footer-logo img {
             height: 80px;
             width: auto;
-            filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.3));
+            filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.2));
         }
 
         .footer-social-links {
@@ -1887,12 +1889,12 @@
             justify-content: center;
             width: 50px;
             height: 50px;
-            background: rgba(255, 255, 255, 0.08);
-            color: var(--gold);
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
             border-radius: 50%;
             text-decoration: none;
             transition: all 0.3s ease;
-            border: 2px solid var(--gold);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             animation: slideUp 0.6s ease forwards;
             margin: 0 10px;
         }
@@ -1902,10 +1904,10 @@
         .social-icon:nth-child(3) { animation-delay: 0.3s; }
 
         .social-icon:hover {
-            background: var(--gold);
-            color: var(--luxury-black);
+            background: #ffffff;
+            color: #000000;
             transform: translateY(-3px) scale(1.1);
-            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
         }
 
         .social-icon i {
@@ -1932,7 +1934,7 @@
 
         .btn-instagram {
             display: inline-block;
-            background: linear-gradient(135deg, var(--gold) 0%, var(--primary-blue) 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
             color: white;
             padding: 15px 40px;
             border-radius: 30px;
@@ -1942,15 +1944,15 @@
             text-transform: uppercase;
             letter-spacing: 1.5px;
             transition: all 0.3s ease;
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.15);
             cursor: pointer;
             border: none;
         }
 
         .btn-instagram:hover {
             transform: translateY(-4px);
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.6), 0 0 20px rgba(44, 90, 160, 0.3);
-            background: linear-gradient(135deg, var(--light-gold) 0%, var(--secondary-blue) 100%);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2), 0 0 20px rgba(255, 255, 255, 0.1);
+            background: linear-gradient(135deg, #f0f0f0 0%, #ffffff 100%);
         }
 
         @keyframes fadeInDown {
@@ -1964,6 +1966,7 @@
             }
         }
 
+        /* ===== MAPA DO GOOGLE ===== */
         @keyframes slideUp {
             from {
                 opacity: 0;
@@ -1976,43 +1979,115 @@
         }
 
         /* ===== RESPONSIVE ===== */
+        /* ===== TABLET (768px e menos) ===== */
+        @media (max-width: 1024px) {
+            .header-container {
+                gap: 20px;
+            }
+
+            .cursos-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .produtos-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .modal-content {
+                width: 95%;
+                max-width: 800px;
+                margin: 5% auto;
+            }
+
+            .modal-header-layout {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .modal-image-small {
+                width: 200px;
+                height: auto;
+                margin-bottom: 20px;
+            }
+        }
+
         @media (max-width: 768px) {
+            /* Header */
+            header {
+                padding: 15px 0;
+            }
+
+            .header-container {
+                flex-direction: column;
+                gap: 10px;
+                padding: 0 10px;
+            }
+
+            .logo img {
+                height: 50px;
+            }
+
             nav {
-                gap: 15px;
+                gap: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
                 font-size: 11px;
+                padding: 8px 10px;
             }
 
             .nav-cta-button {
-                padding: 8px 15px;
+                padding: 8px 12px;
                 font-size: 10px;
-                margin-left: 10px;
+                margin: 0;
             }
 
+            /* Hero */
             .hero {
-                min-height: 400px;
+                min-height: 350px;
+                flex-direction: column-reverse;
+            }
+
+            .hero-image-side {
+                display: none;
+            }
+
+            .hero-content {
+                width: 100%;
             }
 
             .hero-text {
-                padding: 40px 20px;
-                max-width: 100%;
+                padding: 30px 20px;
             }
 
             .hero h1 {
-                font-size: 32px;
+                font-size: 26px;
+                line-height: 1.3;
             }
 
+            .hero p {
+                font-size: 14px;
+            }
+
+            /* Títulos */
             .transformations h2,
-            .procedures h2 {
-                font-size: 24px;
+            .procedures h2,
+            .especialista-title,
+            .avaliacoes-title {
+                font-size: 22px;
             }
 
+            /* Grid de Procedimentos */
             .procedures-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
+                gap: 12px;
             }
 
             .procedure-card {
-                padding: 20px;
+                padding: 15px;
             }
 
             .procedure-card h3 {
@@ -2020,92 +2095,528 @@
             }
 
             .procedure-image {
-                height: 100px;
+                height: 80px;
             }
 
-            .whatsapp-container {
-                flex-direction: column;
-                gap: 15px;
+            /* Grid de Cursos */
+            .cursos-grid {
+                grid-template-columns: 1fr;
             }
 
+            .curso-image {
+                height: 200px;
+            }
+
+            /* Grid de Produtos */
+            .produtos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Dra Wendrea */
             .dra-wendrea-content {
                 grid-template-columns: 1fr;
                 gap: 0;
             }
 
             .dra-image-container {
-                height: 300px;
+                height: 250px;
+                order: -1;
             }
 
             .dra-info {
-                padding: 30px 20px;
+                padding: 25px 20px;
             }
 
-            .cursos-grid {
+            .dra-name {
+                font-size: 20px;
+            }
+
+            /* Modal */
+            .modal-content {
+                width: 95%;
+                max-width: 100%;
+                margin: 10% auto;
+                border-radius: 15px;
+            }
+
+            .modal-tabs {
+                margin: 20px 20px 0 20px;
+                gap: 5px;
+            }
+
+            .tab-button {
+                padding: 12px 15px;
+                font-size: 12px;
+            }
+
+            .tab-content {
+                padding: 0 20px 20px 20px;
+            }
+
+            .modal-button-whatsapp {
+                margin: 20px 20px 20px 20px;
+                padding: 14px 30px;
+                font-size: 13px;
+            }
+
+            /* Footer */
+            .footer-content {
                 grid-template-columns: 1fr;
+                gap: 25px;
             }
 
+            .footer-section {
+                text-align: center;
+            }
+
+            .footer-social-links {
+                justify-content: center;
+            }
+
+            /* Avaliações */
             .avaliacoes-grid {
                 grid-template-columns: 1fr;
             }
 
-            .produtos-grid {
-                grid-template-columns: 1fr;
+            .carousel-dots-avaliacoes {
+                gap: 6px;
             }
 
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
+            .dot-avaliacao {
+                width: 8px;
+                height: 8px;
+            }
+
+            .dot-avaliacao.active {
+                width: 24px;
             }
         }
 
-        @media (max-width: 480px) {
+        /* ===== CELULAR (480px e menos) ===== */
+        @media (max-width: 600px) {
+            /* Header */
             header {
-                padding: 12px 0;
+                padding: 10px 0;
+                border-bottom: none;
             }
 
             .header-container {
                 flex-direction: column;
-                gap: 15px;
+                gap: 8px;
+            }
+
+            .logo img {
+                height: 40px;
+            }
+
+            .logo-text {
+                font-size: 14px;
             }
 
             nav {
-                gap: 10px;
-                justify-content: center;
+                flex-direction: column;
+                gap: 5px;
             }
 
             nav a {
                 font-size: 10px;
+                padding: 6px 8px;
+                width: 100%;
+                text-align: center;
             }
 
+            .nav-cta-button {
+                width: 100%;
+                padding: 10px 10px;
+                font-size: 9px;
+                margin: 0;
+            }
+
+            /* Hero */
             .hero {
-                padding: 40px 15px;
+                min-height: 300px;
+                padding: 20px;
+            }
+
+            .hero-content {
+                width: 100%;
+            }
+
+            .hero-text {
+                padding: 20px 0;
             }
 
             .hero h1 {
+                font-size: 18px;
+                line-height: 1.2;
+            }
+
+            .hero p {
+                font-size: 12px;
+                line-height: 1.4;
+            }
+
+            /* Seções */
+            .transformations,
+            .procedures,
+            .especialista-section,
+            .dra-wendrea,
+            .avaliacoes-section {
+                padding: 40px 15px;
+            }
+
+            /* Títulos */
+            .transformations h2,
+            .procedures h2,
+            .especialista-title,
+            .avaliacoes-title {
+                font-size: 18px;
+                margin-bottom: 25px;
+            }
+
+            .procedures h2::after,
+            .transformations h2::after {
+                display: none;
+            }
+
+            /* Grid */
+            .procedures-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .procedure-card {
+                padding: 12px;
+            }
+
+            .procedure-card h3 {
+                font-size: 11px;
+            }
+
+            .procedure-image {
+                height: 70px;
+            }
+
+            .procedure-button {
+                padding: 6px 12px;
+                font-size: 10px;
+            }
+
+            /* Cursos */
+            .cursos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .curso-image {
+                height: 150px;
+            }
+
+            .curso-nome {
+                font-size: 13px;
+            }
+
+            .curso-button {
+                padding: 8px 16px;
+                font-size: 11px;
+            }
+
+            /* Produtos */
+            .produtos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .produto-nome {
+                font-size: 13px;
+            }
+
+            .produto-button {
+                font-size: 11px;
+            }
+
+            /* Dra Wendrea */
+            .dra-info {
+                padding: 20px 15px;
+            }
+
+            .dra-name {
+                font-size: 16px;
+            }
+
+            .dra-crbm {
+                font-size: 12px;
+            }
+
+            .dra-descricao {
+                font-size: 13px;
+                line-height: 1.5;
+            }
+
+            .dra-image-container {
+                height: 200px;
+            }
+
+            /* Modal */
+            .modal-content {
+                width: 98%;
+                max-height: 90vh;
+                margin: 15% auto;
+                padding: 0;
+            }
+
+            .modal-header-layout {
+                flex-direction: column;
+                padding: 20px 15px 0 15px;
+            }
+
+            .modal-image-small {
+                width: 150px;
+                height: 150px;
+                margin: 0 auto 15px;
+            }
+
+            .modal-header-info h2 {
+                font-size: 18px;
+            }
+
+            .modal-header-info p {
+                font-size: 12px;
+            }
+
+            .modal-price {
+                font-size: 13px;
+            }
+
+            .price-value {
                 font-size: 24px;
             }
 
-            .hero-image-container {
-                height: 250px;
+            .modal-tabs {
+                margin: 15px 0 0 0;
+                gap: 2px;
+                overflow-x: auto;
+                flex-wrap: nowrap;
             }
 
-            .procedures-grid {
+            .tab-button {
+                padding: 10px 12px;
+                font-size: 10px;
+                white-space: nowrap;
+            }
+
+            .tab-content {
+                padding: 0 15px 15px 15px;
+            }
+
+            .conteudo-lista {
+                font-size: 12px;
+            }
+
+            .conteudo-lista li {
+                margin-bottom: 8px;
+            }
+
+            .info-cards {
                 grid-template-columns: 1fr;
                 gap: 15px;
             }
 
-            .transformations-gallery {
-                grid-template-columns: 1fr;
+            .info-card {
+                padding: 15px;
             }
 
-            .whatsapp-text {
+            .info-card h4 {
+                font-size: 13px;
+            }
+
+            .info-card p {
+                font-size: 12px;
+            }
+
+            .pagamento-info {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .pagamento-opcao {
+                padding: 15px;
+            }
+
+            .pagamento-opcao h4 {
+                font-size: 12px;
+            }
+
+            .opcao-preco {
                 font-size: 14px;
             }
 
-            .whatsapp-button {
-                padding: 10px 20px;
+            .modal-button-whatsapp {
+                margin: 15px 15px 15px 15px;
+                padding: 12px 20px;
                 font-size: 12px;
+                width: calc(100% - 30px);
+            }
+
+            /* Avaliações */
+            .avaliacoes-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .avaliacao-card {
+                padding: 15px;
+            }
+
+            .avaliacao-nome {
+                font-size: 12px;
+            }
+
+            .avaliacao-stars {
+                font-size: 12px;
+            }
+
+            .avaliacao-texto {
+                font-size: 12px;
+                line-height: 1.4;
+            }
+
+            .avaliacao-data {
+                font-size: 11px;
+            }
+
+            .carousel-dots-avaliacoes {
+                gap: 5px;
+            }
+
+            .dot-avaliacao {
+                width: 6px;
+                height: 6px;
+            }
+
+            .dot-avaliacao.active {
+                width: 16px;
+            }
+
+            /* Footer */
+            .footer {
+                padding: 30px 15px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .footer-section {
+                text-align: center;
+            }
+
+            .footer-section h3 {
+                font-size: 14px;
+            }
+
+            .footer-section p,
+            .footer-section a {
+                font-size: 12px;
+            }
+
+            .footer-logo img {
+                height: 40px;
+            }
+
+            .footer-social-links {
+                justify-content: center;
+                gap: 8px;
+            }
+
+            .social-icon {
+                width: 40px;
+                height: 40px;
+                margin: 0 5px;
+            }
+
+            .social-icon i {
+                font-size: 16px;
+            }
+
+            .footer-bottom {
+                font-size: 11px;
+            }
+
+            /* Transformações */
+            .gallery-item {
+                height: 150px;
+            }
+
+            .carousel-dots {
+                gap: 4px;
+            }
+
+            .dot {
+                width: 8px;
+                height: 8px;
+            }
+
+            .dot.active {
+                width: 20px;
+            }
+        }
+
+        /* ===== CELULAR MUITO PEQUENO (até 375px) ===== */
+        @media (max-width: 375px) {
+            body {
+                font-size: 13px;
+            }
+
+            /* Header */
+            .header-container {
+                padding: 0 5px;
+            }
+
+            .logo img {
+                height: 35px;
+            }
+
+            nav a {
+                font-size: 9px;
+                padding: 5px 6px;
+            }
+
+            /* Hero */
+            .hero h1 {
+                font-size: 16px;
+            }
+
+            .hero p {
+                font-size: 11px;
+            }
+
+            /* Títulos */
+            .transformations h2,
+            .procedures h2 {
+                font-size: 16px;
+            }
+
+            /* Cards */
+            .procedure-card h3 {
+                font-size: 10px;
+            }
+
+            .curso-button {
+                font-size: 10px;
+                padding: 6px 12px;
+            }
+
+            .modal-header-info h2 {
+                font-size: 16px;
+            }
+
+            .price-value {
+                font-size: 20px;
+            }
+
+            .modal-button-whatsapp {
+                font-size: 11px;
+                padding: 10px 15px;
             }
         }
     </style>
@@ -2117,7 +2628,7 @@
         <div class="header-container">
             <div class="logo">
                 <img src="Fotos/logo.jpg" alt="Logo Clínica Burgarelli" onerror="this.style.display='none'">
-                <div class="logo-text" style="display:none; color: var(--gold); font-weight: bold; font-size: 18px;">CLÍNICA BURGARELLI</div>
+                <div class="logo-text" style="display:none; color: #ffffff; font-weight: bold; font-size: 18px;">CLÍNICA BURGARELLI</div>
             </div>
             <nav>
                 <a href="#sobre">Sobre</a>
@@ -2212,80 +2723,80 @@
         <div class="procedures-content">
             <h2>Procedimentos</h2>
             <div class="procedures-grid">
-                <div class="procedure-card">
+                <div class="procedure-card" onclick="openModal('modal-botox')">
                     <h3>Botox</h3>
                     <div class="procedure-image">
                         <img src="Fotos/Botox.jpg" alt="Botox">
                     </div>
                 </div>
-                <div class="procedure-card">
+                <div class="procedure-card" onclick="openModal('modal-harmonizacao')">
                     <h3>Armonização Facial</h3>
                     <div class="procedure-image">
                         <img src="Fotos/harmonização.jpg" alt="Harmonização">
                     </div>
                 </div>
-                <div class="procedure-card">
+                <div class="procedure-card" onclick="openModal('modal-celulite')">
                     <h3>Celulite</h3>
                     <div class="procedure-image">
                         <img src="Fotos/celulite.jpg" alt="Celulite">
                     </div>
                 </div>
-                <div class="procedure-card">
+                <div class="procedure-card" onclick="openModal('modal-colageno')">
                     <h3>Bioestimulador de Colágeno</h3>
                     <div class="procedure-image">
                         <img src="Fotos/Colágeno.jpg" alt="Colágeno">
                     </div>
                 </div>
-                <div class="procedure-card">
+                <div class="procedure-card" onclick="openModal('modal-labial')">
                     <h3>Preenchimento Labial</h3>
                     <div class="procedure-image">
                         <img src="Fotos/preenchimento-labial.jpg" alt="Preenchimento Labial">
                     </div>
                 </div>
 
-                <div class="procedure-card">
+                <div class="procedure-card" onclick="openModal('modal-facial')">
                     <h3>Preenchimento Facial</h3>
                     <div class="procedure-image">
                         <img src="Fotos/preenchimento-facial.jpg" alt="Preenchimento Facial">
                     </div>
                 </div>
 
-                <div class="procedure-card">
+                <div class="procedure-card" onclick="openModal('modal-papada')">
                     <h3>Lipoenzima de Papada</h3>
                     <div class="procedure-image">
                         <img src="Fotos/Lipoenzima-de-papada.jpg" alt="Lipoenzima de Papada">
                     </div>
                 </div>
 
-                <div class="procedure-card">
+                <div class="procedure-card" onclick="openModal('modal-gordura')">
                     <h3>Lipoenzima de Gordura</h3>
                     <div class="procedure-image">
                         <img src="Fotos/Lipoenzima-de-gordura.jpg" alt="Lipoenzima de Gordura">
                     </div>
                 </div>
 
-                <div class="procedure-card">
+                <div class="procedure-card" onclick="openModal('modal-estrias')">
                     <h3>Protocolo de Estrias</h3>
                     <div class="procedure-image">
                         <img src="Fotos/protocolo-de-estrias.jpg" alt="Protocolo de Estrias">
                     </div>
                 </div>
 
-                <div class="procedure-card">
+                <div class="procedure-card" onclick="openModal('modal-microagulhamento')">
                     <h3>Microagulhamento</h3>
                     <div class="procedure-image">
                         <img src="Fotos/microagulhamento.jpg" alt="Microagulhamento">
                     </div>
                 </div>
 
-                <div class="procedure-card">
+                <div class="procedure-card" onclick="openModal('modal-limpeza')">
                     <h3>Limpeza de Pele</h3>
                     <div class="procedure-image">
                         <img src="Fotos/limpeza-de-pele.jpg" alt="Limpeza de Pele">
                     </div>
                 </div>
 
-                <div class="procedure-card">
+                <div class="procedure-card" onclick="openModal('modal-terapiacapilar')">
                     <h3>Terápiacapilar</h3>
                     <div class="procedure-image">
                         <img src="Fotos/terapiacapilar.jpg" alt="Terápiacapilar">
@@ -2398,6 +2909,1337 @@
             </div>
         </div>
     </section>
+
+    <!-- MODALS DOS PROCEDIMENTOS -->
+    <!-- Modal Botox -->
+    <div id="modal-botox" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('modal-botox')">&times;</span>
+            <div class="modal-header-layout">
+                <div class="modal-image-small">
+                    <img src="Fotos/Botox.jpg" alt="Botox">
+                </div>
+                <div class="modal-header-info">
+                    <h2>Botox</h2>
+                    <p class="modal-subtitle">Rejuvenescimento facial com resultado natural</p>
+                </div>
+            </div>
+            <div class="modal-tabs">
+                <button class="tab-button active" onclick="openTab(event, 'botox-desc')">Descrição</button>
+                <button class="tab-button" onclick="openTab(event, 'botox-beneficios')">Benefícios</button>
+                <button class="tab-button" onclick="openTab(event, 'botox-resultado')">Resultado</button>
+                <button class="tab-button" onclick="openTab(event, 'botox-posprocedimento')">Pós-Procedimento</button>
+            </div>
+            
+            <div id="botox-desc" class="tab-content active">
+                <h3 class="modal-section-title">Sobre o Procedimento</h3>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                    O Botox é um procedimento estético minimamente invasivo que utiliza a toxina botulínica tipo A para suavizar rugas e linhas de expressão. Ele atua bloqueando temporariamente os sinais nervosos dos músculos responsáveis pelas contrações faciais, promovendo um aspecto mais relaxado e rejuvenescido da pele.
+                </p>
+                
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Como Funciona</h4>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                    A toxina botulínica atua como um bloqueador neuromuscular, impedindo temporariamente a contração muscular que causa as rugas dinâmicas. O procedimento é realizado por meio de microinjeções em pontos específicos da musculatura facial, resultando em um aspecto mais liso e relaxado.
+                </p>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Indicações Principais</h4>
+                <ul class="conteudo-lista">
+                    <li>✓ <strong>Linhas na testa:</strong> Rugas horizontais de expressão</li>
+                    <li>✓ <strong>Pés de galinha:</strong> Região ao redor dos olhos</li>
+                    <li>✓ <strong>Glabela:</strong> Linhas entre as sobrancelhas</li>
+                    <li>✓ <strong>Rugas ao redor da boca:</strong> Linhas verticais e horizontais</li>
+                    <li>✓ <strong>Sorriso gengival:</strong> Correção de exposição excessiva</li>
+                    <li>✓ <strong>Bruxismo:</strong> Tratamento do ranger de dentes</li>
+                    <li>✓ <strong>Hiperidrose:</strong> Redução de suor excessivo</li>
+                </ul>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Detalhes do Procedimento</h4>
+                <ul class="conteudo-lista">
+                    <li>✓ <strong>Duração:</strong> 15 a 30 minutos em consultório</li>
+                    <li>✓ <strong>Técnica:</strong> Aplicação via microinjeções precisas</li>
+                    <li>✓ <strong>Desconforto:</strong> Pequenas picadas com leve desconforto suportável</li>
+                    <li>✓ <strong>Anestesia:</strong> Opcional - pode usar anestésico tópico</li>
+                    <li>✓ <strong>Local:</strong> Realizado em consultório seguro</li>
+                    <li>✓ <strong>Recuperação:</strong> Nenhum afastamento prolongado necessário</li>
+                </ul>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Cuidados Nas Primeiras 24 Horas</h4>
+                <ul class="conteudo-lista" style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px;">
+                    <li>⚠️ <strong>Não deitar:</strong> Nas primeiras 4 horas após aplicação</li>
+                    <li>⚠️ <strong>Não massagear:</strong> Evitar pressionar a área tratada</li>
+                    <li>⚠️ <strong>Evitar atividades intensas:</strong> Exercícios físicos pesados</li>
+                    <li>⚠️ <strong>Não consumir álcool:</strong> Evitar em excesso</li>
+                    <li>⚠️ <strong>Evitar calor intenso:</strong> Sauna, banho muito quente</li>
+                    <li>⚠️ <strong>Proteção solar:</strong> Evitar exposição ao sol direto</li>
+                </ul>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Outras Recomendações Importantes</h4>
+                <ul class="conteudo-lista">
+                    <li>• Manter a cabeça ereta nas primeiras horas</li>
+                    <li>• Seguir todas as orientações do profissional</li>
+                    <li>• Retorno para avaliação pode ser necessário após 15 dias</li>
+                    <li>• Evitar produtos muito quentes no rosto por 48 horas</li>
+                </ul>
+            </div>
+            <div id="botox-beneficios" class="tab-content">
+                <h3 class="modal-section-title">Principais Benefícios</h3>
+                <ul class="conteudo-lista">
+                    <li>✓ Redução significativa de rugas e linhas de expressão</li>
+                    <li>✓ Prevenção do envelhecimento precoce da pele</li>
+                    <li>✓ Aparência mais jovem e descansada sem parecer artificial</li>
+                    <li>✓ Procedimento extremamente rápido (15-30 minutos)</li>
+                    <li>✓ Sem cirurgia ou afastamento prolongado do trabalho</li>
+                    <li>✓ Resultados naturais mantendo as expressões faciais</li>
+                    <li>✓ Efeito terapêutico (enxaqueca, bruxismo, suor excessivo)</li>
+                    <li>✓ Customizável conforme preferência estética individual</li>
+                </ul>
+            </div>
+            <div id="botox-resultado" class="tab-content">
+                <h3 class="modal-section-title">Timeline de Resultados</h3>
+                <ul class="conteudo-lista">
+                    <li>✓ <strong>3 a 5 dias:</strong> Início dos efeitos começam a aparecer</li>
+                    <li>✓ <strong>10 a 14 dias:</strong> Resultado completo e máximo é atingido</li>
+                    <li>✓ <strong>3 a 6 meses:</strong> Duração média do efeito (varia por paciente)</li>
+                    <li>✓ <strong>Manutenção:</strong> Reaplicação recomendada a cada 3-4 meses</li>
+                </ul>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">O Resultado</h4>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                    A pele fica com aparência mais lisa, as expressões suavizadas e um aspecto geral mais jovem e descansado. Quando aplicado corretamente por profissional experiente, o resultado mantém a naturalidade, sem aparência "congelada" ou artificial.
+                </p>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Avaliação de Acompanhamento</h4>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                    Retorno para avaliação pode ser necessário após 15 dias para verificar os resultados e fazer ajustes se necessário.
+                </p>
+            </div>
+            <div id="botox-posprocedimento" class="tab-content">
+                <h3 class="modal-section-title">Cuidados Pós-Procedimento</h3>
+                
+                <h4 style="color: #ffffff; margin-top: 0; margin-bottom: 15px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Nas Primeiras 24 Horas</h4>
+                <ul class="conteudo-lista" style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px;">
+                    <li>⚠️ <strong>Não deitar:</strong> Evitar deitar nas primeiras 4 horas após aplicação</li>
+                    <li>⚠️ <strong>Não massagear:</strong> Não massagear ou pressionar a área tratada</li>
+                    <li>⚠️ <strong>Sem atividades intensas:</strong> Evitar exercícios físicos pesados</li>
+                    <li>⚠️ <strong>Sem álcool:</strong> Não consumir álcool em excesso</li>
+                    <li>⚠️ <strong>Sem calor intenso:</strong> Evitar sauna, banho muito quente e exposição solar</li>
+                </ul>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 15px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Outras Recomendações Importantes</h4>
+                <ul class="conteudo-lista">
+                    <li>✓ Manter a cabeça ereta nas primeiras horas</li>
+                    <li>✓ Seguir todas as orientações do profissional aplicador</li>
+                    <li>✓ Retorno para avaliação após 15 dias (se necessário)</li>
+                    <li>✓ Usar protetor solar diariamente</li>
+                    <li>✓ Manter a pele bem hidratada</li>
+                    <li>✓ Evitar produtos muito quentes no rosto por 48 horas</li>
+                    <li>✓ Evitar procedimentos faciais adicionais por 2 semanas</li>
+                </ul>
+
+                <p style="color: rgba(255,255,255,0.7); margin-top: 20px; font-size: 13px; font-style: italic;">
+                    ℹ️ Seguindo estes cuidados, você garantirá os melhores resultados e uma recuperação segura. Dúvidas? Entre em contato conosco a qualquer momento!
+                </p>
+            </div>
+            <a href="https://wa.me/5527988262007" class="modal-button-whatsapp" target="_blank">
+                <span>💬 Agende sua consulta</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Modal Harmonização Facial -->
+    <div id="modal-harmonizacao" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('modal-harmonizacao')">&times;</span>
+            <div class="modal-header-layout">
+                <div class="modal-image-small">
+                    <img src="Fotos/harmonização.jpg" alt="Harmonização Facial">
+                </div>
+                <div class="modal-header-info">
+                    <h2>Harmonização Facial</h2>
+                    <p class="modal-subtitle">Realce sua beleza natural com harmonia</p>
+                </div>
+            </div>
+            <div class="modal-tabs">
+                <button class="tab-button active" onclick="openTab(event, 'harmonizacao-desc')">Descrição</button>
+                <button class="tab-button" onclick="openTab(event, 'harmonizacao-beneficios')">Benefícios</button>
+                <button class="tab-button" onclick="openTab(event, 'harmonizacao-resultado')">Resultado</button>
+                <button class="tab-button" onclick="openTab(event, 'harmonizacao-posprocedimento')">Pós-Procedimento</button>
+            </div>
+            
+            <div id="harmonizacao-desc" class="tab-content active">
+                <h3 class="modal-section-title">Sobre o Procedimento</h3>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                    A Harmonização Facial é um conjunto de procedimentos estéticos minimamente invasivos que têm como objetivo equilibrar e realçar os traços do rosto, proporcionando mais simetria e harmonia facial. É um tratamento personalizado que respeita as características individuais de cada paciente.
+                </p>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Técnicas e Substâncias Utilizadas</h4>
+                <ul class="conteudo-lista">
+                    <li>✓ <strong>Ácido hialurônico:</strong> Preenchimento e volumização</li>
+                    <li>✓ <strong>Botox:</strong> Relaxamento muscular e suavização de expressões</li>
+                    <li>✓ <strong>Bioestimuladores de colágeno:</strong> Regeneração e rejuvenescimento</li>
+                    <li>✓ <strong>Outras inovações:</strong> Conforme necessidade individual</li>
+                </ul>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Áreas de Aplicação</h4>
+                <ul class="conteudo-lista">
+                    <li>✓ <strong>Mandíbula:</strong> Contorno facial e definição</li>
+                    <li>✓ <strong>Mento:</strong> Aumento e proporção do queixo</li>
+                    <li>✓ <strong>Maçãs do rosto:</strong> Volumização e levantamento</li>
+                    <li>✓ <strong>Nariz:</strong> Rinomodelação sem cirurgia</li>
+                    <li>✓ <strong>Lábios:</strong> Aumento de volume e definição</li>
+                    <li>✓ <strong>Olheiras:</strong> Preenchimento e clareamento</li>
+                    <li>✓ <strong>Linha de expressão:</strong> Suavização geral</li>
+                </ul>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Como Funciona</h4>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                    O procedimento é totalmente personalizado. Primeiro, realizamos uma avaliação detalhada das proporções faciais, analisando simetria, volume e contornos. Depois, criamos um plano de tratamento específico combinando as técnicas mais apropriadas para você. A aplicação é realizada com precisão em consultório.
+                </p>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Detalhes do Procedimento</h4>
+                <ul class="conteudo-lista">
+                    <li>✓ <strong>Duração:</strong> 30 a 60 minutos (depende da extensão)</li>
+                    <li>✓ <strong>Local:</strong> Realizado em consultório seguro</li>
+                    <li>✓ <strong>Anestesia:</strong> Pode ser utilizado anestésico tópico</li>
+                    <li>✓ <strong>Desconforto:</strong> Mínimo com aplicação cuidadosa</li>
+                    <li>✓ <strong>Recuperação:</strong> Mínima com possível retorno imediato</li>
+                </ul>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Cuidados Nas Primeiras 24 a 48 Horas</h4>
+                <ul class="conteudo-lista" style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px;">
+                    <li>⚠️ <strong>Não tocar ou massagear:</strong> A área tratada nas primeiras 24h</li>
+                    <li>⚠️ <strong>Sem atividades físicas:</strong> Evitar exercícios intensos por 48h</li>
+                    <li>⚠️ <strong>Sem exposição ao sol:</strong> Evitar calor excessivo e radiação solar</li>
+                    <li>⚠️ <strong>Sem álcool excessivo:</strong> Não consumir nas primeiras 48h</li>
+                    <li>⚠️ <strong>Maquiagem cuidadosa:</strong> Evitar nas primeiras horas se orientado</li>
+                </ul>
+            </div>
+            <div id="harmonizacao-beneficios" class="tab-content">
+                <h3 class="modal-section-title">Principais Benefícios</h3>
+                <ul class="conteudo-lista">
+                    <li>✓ Melhora significativa da simetria e proporção facial</li>
+                    <li>✓ Rejuvenescimento geral da aparência do rosto</li>
+                    <li>✓ Definição e contorno melhorados do rosto</li>
+                    <li>✓ Correção de imperfeições (nariz, queixo, mandíbula)</li>
+                    <li>✓ Resultados completamente naturais quando bem planejado</li>
+                    <li>✓ Procedimento não cirúrgico e não invasivo</li>
+                    <li>✓ Aumento significativo da autoestima e confiança</li>
+                    <li>✓ Personalização total de acordo com seus objetivos</li>
+                </ul>
+            </div>
+            <div id="harmonizacao-resultado" class="tab-content">
+                <h3 class="modal-section-title">Timeline de Resultados</h3>
+                <ul class="conteudo-lista">
+                    <li>✓ <strong>Imediato:</strong> Mudanças visíveis logo após procedimento (preenchimento)</li>
+                    <li>✓ <strong>2 semanas:</strong> Resultado final e completo</li>
+                    <li>✓ <strong>Melhora progressiva:</strong> Com bioestimuladores durante meses</li>
+                    <li>✓ <strong>Resultado máximo:</strong> Alcançado entre 4 a 6 semanas</li>
+                </ul>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Duração por Substância</h4>
+                <ul class="conteudo-lista">
+                    <li>✓ <strong>Preenchimento (ácido hialurônico):</strong> 8 a 18 meses</li>
+                    <li>✓ <strong>Botox (toxina botulínica):</strong> 3 a 6 meses</li>
+                    <li>✓ <strong>Bioestimuladores:</strong> 12 a 24 meses (resultados progressivos)</li>
+                </ul>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">O Resultado Final</h4>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                    O rosto apresenta aspecto mais equilibrado, jovem e harmonioso. Respeitando completamente a individualidade do paciente, mantém características pessoais e expressão natural, sem parecer artificial ou "moldado".
+                </p>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Manutenção</h4>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                    A manutenção periódica é recomendada conforme necessidade individual e tipo de substância utilizada, para manter os resultados desejados a longo prazo.
+                </p>
+            </div>
+            <div id="harmonizacao-posprocedimento" class="tab-content">
+                <h3 class="modal-section-title">Cuidados Pós-Procedimento</h3>
+                
+                <h4 style="color: #ffffff; margin-top: 0; margin-bottom: 15px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Nas Primeiras 24 a 48 Horas</h4>
+                <ul class="conteudo-lista" style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px;">
+                    <li>⚠️ <strong>Não tocar ou massagear:</strong> Evitar a área tratada completamente</li>
+                    <li>⚠️ <strong>Sem atividades físicas:</strong> Nenhum exercício intenso por 48 horas</li>
+                    <li>⚠️ <strong>Sem exposição ao sol:</strong> Evitar calor excessivo, sauna e radiação solar</li>
+                    <li>⚠️ <strong>Sem álcool em excesso:</strong> Pode aumentar inchaço</li>
+                    <li>⚠️ <strong>Maquiagem cuidadosa:</strong> Evitar nas primeiras horas se orientado</li>
+                </ul>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 15px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Reações Normais</h4>
+                <ul class="conteudo-lista">
+                    <li>ℹ️ <strong>Inchaço leve:</strong> É normal, diminui em 24-48 horas</li>
+                    <li>ℹ️ <strong>Hematomas temporários:</strong> Podem aparecer (desaparecem em 7-14 dias)</li>
+                    <li>ℹ️ <strong>Sensibilidade:</strong> Diminui naturalmente nos dias seguintes</li>
+                </ul>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 15px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Recomendações Importantes</h4>
+                <ul class="conteudo-lista">
+                    <li>✓ Utilizar compressas frias se necessário reduzir inchaço</li>
+                    <li>✓ Seguir rigorosamente todas as orientações do profissional</li>
+                    <li>✓ Usar protetor solar 50+ diariamente</li>
+                    <li>✓ Manter a pele bem hidratada</li>
+                    <li>✓ Evitar procedimentos faciais adicionais por 2 semanas</li>
+                    <li>✓ Retorno para avaliação pode ser recomendado</li>
+                    <li>✓ Entre em contato se houver qualquer dúvida ou preocupação</li>
+                </ul>
+
+                <p style="color: rgba(255,255,255,0.7); margin-top: 20px; font-size: 13px; font-style: italic;">
+                    ℹ️ Seguindo estas orientações, você obterá os melhores resultados possíveis. Estamos à disposição para esclarecer qualquer dúvida!
+                </p>
+            </div>
+            <a href="https://wa.me/5527988262007" class="modal-button-whatsapp" target="_blank">
+                <span>💬 Agende sua consulta</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Modal Celulite -->
+    <div id="modal-celulite" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('modal-celulite')">&times;</span>
+            <div class="modal-header-layout">
+                <div class="modal-image-small">
+                    <img src="Fotos/celulite.jpg" alt="Tratamento Celulite">
+                </div>
+                <div class="modal-header-info">
+                    <h2>Tratamento de Celulite</h2>
+                    <p class="modal-subtitle">Elimine a celulite com tratamentos avançados</p>
+                </div>
+            </div>
+            <div class="modal-tabs">
+                <button class="tab-button active" onclick="openTab(event, 'celulite-desc')">Descrição</button>
+                <button class="tab-button" onclick="openTab(event, 'celulite-beneficios')">Benefícios</button>
+                <button class="tab-button" onclick="openTab(event, 'celulite-resultado')">Resultado</button>
+                <button class="tab-button" onclick="openTab(event, 'celulite-posprocedimento')">Pós-Procedimento</button>
+            </div>
+            
+            <div id="celulite-desc" class="tab-content active">
+                <h3 class="modal-section-title">Sobre o Procedimento</h3>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                    O tratamento para celulite consiste em um conjunto de técnicas estéticas que visam reduzir o aspecto irregular da pele, conhecido como "casca de laranja". A celulite ocorre devido ao acúmulo de gordura, retenção de líquidos e alterações na circulação e no tecido conjuntivo.
+                </p>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Causas da Celulite</h4>
+                <ul class="conteudo-lista">
+                    <li>✓ Acúmulo de gordura localizada</li>
+                    <li>✓ Retenção de líquidos nos tecidos</li>
+                    <li>✓ Alterações na circulação sanguínea</li>
+                    <li>✓ Enfraquecimento do tecido conjuntivo</li>
+                    <li>✓ Falta de drenagem linfática adequada</li>
+                </ul>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Abordagens Terapêuticas</h4>
+                <ul class="conteudo-lista">
+                    <li>✓ <strong>Drenagem linfática:</strong> Melhora circulação e elimina retenção</li>
+                    <li>✓ <strong>Radiofrequência:</strong> Estimula colágeno e aperta a pele</li>
+                    <li>✓ <strong>Ultrassom estético:</strong> Rompe depósitos de gordura</li>
+                    <li>✓ <strong>Subcisão:</strong> Em casos mais profundos, libera fibrose</li>
+                    <li>✓ <strong>Bioestimuladores de colágeno:</strong> Regeneração de tecidos</li>
+                    <li>✓ <strong>Enzimas lipolíticas:</strong> Dissolvem acúmulo de gordura</li>
+                </ul>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Personalização do Protocolo</h4>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                    Cada protocolo é personalizado conforme o grau da celulite e as características individuais da paciente. Realizamos uma avaliação detalhada para definir a melhor combinação de técnicas, considerando o tipo de celulite (fibrosa, adiposa ou edematosa) e a profundidade das depressões.
+                </p>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Detalhes do Procedimento</h4>
+                <ul class="conteudo-lista">
+                    <li>✓ <strong>Duração:</strong> 30 a 60 minutos por sessão</li>
+                    <li>✓ <strong>Número de sessões:</strong> 6 a 12 sessões (depende do grau)</li>
+                    <li>✓ <strong>Frequência:</strong> Geralmente 1-2 vezes por semana</li>
+                    <li>✓ <strong>Desconforto:</strong> Mínimo, bem tolerado pelas pacientes</li>
+                    <li>✓ <strong>Recuperação:</strong> Imediata em maioria dos casos</li>
+                </ul>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Cuidados Após as Sessões</h4>
+                <ul class="conteudo-lista" style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px;">
+                    <li>⚠️ <strong>Hidratação:</strong> Beber bastante água (2-3 litros/dia)</li>
+                    <li>⚠️ <strong>Sem álcool:</strong> Evitar em excesso</li>
+                    <li>⚠️ <strong>Alimentação:</strong> Manter equilibrada e anti-inflamatória</li>
+                    <li>⚠️ <strong>Atividade física:</strong> Praticar regularmente</li>
+                    <li>⚠️ <strong>Sol:</strong> Evitar exposição (dependo do procedimento)</li>
+                </ul>
+            </div>
+            <div id="celulite-beneficios" class="tab-content">
+                <h3 class="modal-section-title">Principais Benefícios</h3>
+                <ul class="conteudo-lista">
+                    <li>✓ Redução significativa do aspecto de "casca de laranja"</li>
+                    <li>✓ Melhora da firmeza e elasticidade da pele</li>
+                    <li>✓ Estimulação progressiva da produção de colágeno</li>
+                    <li>✓ Melhora visível da circulação sanguínea e linfática</li>
+                    <li>✓ Redução de medidas em algumas áreas (quando combinado com dieta)</li>
+                    <li>✓ Procedimentos não cirúrgicos e minimamente invasivos</li>
+                    <li>✓ Aumento significativo da autoestima e confiança</li>
+                    <li>✓ Recuperação imediata e sem afastamento profissional</li>
+                </ul>
+            </div>
+            <div id="celulite-resultado" class="tab-content">
+                <h3 class="modal-section-title">Timeline de Resultados</h3>
+                <ul class="conteudo-lista">
+                    <li>✓ <strong>Primeiras sessões:</strong> Melhora imediata da sensação e circulação</li>
+                    <li>✓ <strong>Semanas 2-4:</strong> Primeiras melhorias visíveis</li>
+                    <li>✓ <strong>Meses 2-3:</strong> Resultado significativo e progressivo</li>
+                    <li>✓ <strong>Após ciclo completo:</strong> Resultados mais expressivos</li>
+                </ul>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">O Resultado Final</h4>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                    A pele tende a ficar mais lisa, uniforme, firme e com aspecto geral melhorado. O "casca de laranja" é significativamente reduzido, e a pele recupera elasticidade e qualidade.
+                </p>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Duração dos Resultados</h4>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                    A duração é variável conforme o estilo de vida (alimentação, exercícios, hidratação). Com manutenção periódica e hábitos saudáveis, os resultados podem ser mantidos por longos períodos.
+                </p>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Manutenção Recomendada</h4>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                    Sessões periódicas a cada 4-6 semanas são recomendadas para manter os resultados obtidos e continuar a progressão do tratamento.
+                </p>
+            </div>
+            <div id="celulite-posprocedimento" class="tab-content">
+                <h3 class="modal-section-title">Cuidados Pós-Procedimento</h3>
+                
+                <h4 style="color: #ffffff; margin-top: 0; margin-bottom: 15px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Após as Sessões - Essencial</h4>
+                <ul class="conteudo-lista" style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px;">
+                    <li>⚠️ <strong>Hidratação:</strong> Beber bastante água (2-3 litros/dia)</li>
+                    <li>⚠️ <strong>Sem álcool:</strong> Evitar consumo em excesso</li>
+                    <li>⚠️ <strong>Alimentação:</strong> Manter equilibrada e anti-inflamatória</li>
+                    <li>⚠️ <strong>Atividade física:</strong> Praticar regularmente (caminhadas, exercícios)</li>
+                    <li>⚠️ <strong>Sol:</strong> Evitar exposição solar (dependo do procedimento)</li>
+                    <li>⚠️ <strong>Sessões:</strong> Seguir corretamente o número de sessões recomendadas</li>
+                </ul>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 15px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Reações Normais</h4>
+                <ul class="conteudo-lista">
+                    <li>ℹ️ <strong>Leve vermelhidão:</strong> Normal e desaparece em poucas horas</li>
+                    <li>ℹ️ <strong>Sensibilidade temporária:</strong> Pode ocorrer por 24-48 horas</li>
+                    <li>ℹ️ <strong>Pequenos hematomas:</strong> Em procedimentos injetáveis (desaparecem em 7-14 dias)</li>
+                    <li>ℹ️ <strong>Inchaço leve:</strong> Desaparece em 2-3 dias</li>
+                </ul>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 15px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Recomendações Adicionais</h4>
+                <ul class="conteudo-lista">
+                    <li>✓ Usar roupa de compressão se indicado pelo profissional</li>
+                    <li>✓ Realizar drenagem linfática após 48 horas para otimizar resultados</li>
+                    <li>✓ Evitar banhos muito quentes nas primeiras 24 horas</li>
+                    <li>✓ Manter a área limpa e hidratada com cremes recomendados</li>
+                    <li>✓ Dormir com a perna elevada se recomendado</li>
+                    <li>✓ Seguir todas as orientações específicas do profissional</li>
+                    <li>✓ Manutenção periódica para melhores resultados a longo prazo</li>
+                </ul>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Hábitos que Favorecem os Resultados</h4>
+                <ul class="conteudo-lista">
+                    <li>• Consumir alimentos ricos em fibras</li>
+                    <li>• Reduzir sal e açúcares refinados</li>
+                    <li>• Fazer exercícios regularmente (mínimo 30 min, 3x/semana)</li>
+                    <li>• Manter hidratação constante ao longo do dia</li>
+                    <li>• Dormir bem e reduzir estresse</li>
+                </ul>
+
+                <p style="color: rgba(255,255,255,0.7); margin-top: 20px; font-size: 13px; font-style: italic;">
+                    ℹ️ Combinando o tratamento com hábitos saudáveis, os resultados serão muito mais expressivos e duradouros!
+                </p>
+            </div>
+            <a href="https://wa.me/5527988262007" class="modal-button-whatsapp" target="_blank">
+                <span>💬 Agende sua consulta</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Modal Colágeno -->
+    <div id="modal-colageno" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('modal-colageno')">&times;</span>
+            <div class="modal-header-layout">
+                <div class="modal-image-small">
+                    <img src="Fotos/Colágeno.jpg" alt="Bioestimulador de Colágeno">
+                </div>
+                <div class="modal-header-info">
+                    <h2>Bioestimulador de Colágeno</h2>
+                    <p class="modal-subtitle">Rejuvenescimento profundo e duradouro</p>
+                </div>
+            </div>
+            <div class="modal-tabs">
+                <button class="tab-button active" onclick="openTab(event, 'colageno-desc')">Descrição</button>
+                <button class="tab-button" onclick="openTab(event, 'colageno-beneficios')">Benefícios</button>
+                <button class="tab-button" onclick="openTab(event, 'colageno-resultado')">Resultado</button>
+                <button class="tab-button" onclick="openTab(event, 'colageno-posprocedimento')">Pós-Procedimento</button>
+            </div>
+            
+            <div id="colageno-desc" class="tab-content active">
+                <h3 class="modal-section-title">Sobre o Procedimento</h3>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                    O bioestimulador de colágeno é um procedimento estético injetável que estimula a produção natural de colágeno pelo organismo, promovendo melhora gradual da firmeza, elasticidade e qualidade da pele. É uma abordagem revolucionária que trata a pele de dentro para fora.
+                </p>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Diferença dos Preenchedores Tradicionais</h4>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                    Diferente dos preenchedores, o foco não é dar volume imediato, mas sim estimular a produção natural de colágeno. Isso resulta em rejuvenescimento progressivo e muito mais duradouro, ativando os fibroblastos para reconstruir a estrutura da pele de forma natural e biológica.
+                </p>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Substâncias Utilizadas</h4>
+                <ul class="conteudo-lista">
+                    <li>✓ <strong>Ácido polilático:</strong> Bioestimulador de colágeno de primeira geração</li>
+                    <li>✓ <strong>Hidroxiapatita de cálcio:</strong> Bioestimulador de colágeno avançado</li>
+                    <li>✓ <strong>Produto selecionado:</strong> Conforme análise profissional e necessidade</li>
+                </ul>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Áreas de Aplicação</h4>
+                <ul class="conteudo-lista">
+                    <li>✓ <strong>Rosto:</strong> Revitalização global e aumento de volume natural</li>
+                    <li>✓ <strong>Pescoço:</strong> Melhora da flacidez e rejuvenescimento</li>
+                    <li>✓ <strong>Colo:</strong> Tratamento de rugas e perda de volume</li>
+                    <li>✓ <strong>Braços:</strong> Reafirmação da pele e redução de flacidez</li>
+                    <li>✓ <strong>Abdômen:</strong> Aumento de firmeza e elasticidade</li>
+                    <li>✓ <strong>Glúteos:</strong> Aumento de volume natural e melhora de sustentação</li>
+                </ul>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Como Funciona</h4>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                    A substância é injetada estrategicamente nas camadas da pele, onde funciona como um estimulador. Ao longo de semanas e meses, ela induz a produção gradual de colágeno novo, que é naturalmente mantido pelo organismo. Esse processo resulta em rejuvenescimento progressivo e muito natural.
+                </p>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Detalhes do Procedimento</h4>
+                <ul class="conteudo-lista">
+                    <li>✓ <strong>Duração:</strong> 30 a 45 minutos</li>
+                    <li>✓ <strong>Local:</strong> Realizado em consultório seguro</li>
+                    <li>✓ <strong>Anestesia:</strong> Anestésico tópico ou local</li>
+                    <li>✓ <strong>Desconforto:</strong> Mínimo com aplicação cuidadosa</li>
+                    <li>✓ <strong>Sessões:</strong> Geralmente 1-3 sessões conforme indicação</li>
+                    <li>✓ <strong>Intervalo entre sessões:</strong> 4-6 semanas</li>
+                </ul>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Cuidados Após Aplicação</h4>
+                <ul class="conteudo-lista" style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px;">
+                    <li>⚠️ <strong>Realizar massagens:</strong> Conforme orientação profissional (essencial)</li>
+                    <li>⚠️ <strong>Evitar sol intenso:</strong> Proteção solar é fundamental</li>
+                    <li>⚠️ <strong>Sem atividades intensas:</strong> Evitar por 24 horas</li>
+                    <li>⚠️ <strong>Sem calor excessivo:</strong> Evitar sauna e banho quente</li>
+                    <li>⚠️ <strong>Sem álcool excessivo:</strong> Nos primeiros dias</li>
+                </ul>
+            </div>
+            <div id="colageno-beneficios" class="tab-content">
+                <h3 class="modal-section-title">Principais Benefícios</h3>
+                <ul class="conteudo-lista">
+                    <li>✓ Estímulo natural e biológico de produção de colágeno</li>
+                    <li>✓ Melhora significativa da firmeza e sustentação da pele</li>
+                    <li>✓ Redução progressiva da flacidez em várias áreas</li>
+                    <li>✓ Rejuvenescimento muito natural e progressivo</li>
+                    <li>✓ Melhora notável da textura e qualidade geral da pele</li>
+                    <li>✓ Resultados extremamente duradouros (até 24 meses)</li>
+                    <li>✓ Procedimento minimamente invasivo sem cicatrizes</li>
+                    <li>✓ Efeito biológico autêntico sem parecer artificial</li>
+                </ul>
+            </div>
+            <div id="colageno-resultado" class="tab-content">
+                <h3 class="modal-section-title">Timeline de Resultados</h3>
+                <ul class="conteudo-lista">
+                    <li>✓ <strong>Primeiras semanas:</strong> Reação inflamatória controlada (essencial)</li>
+                    <li>✓ <strong>30 dias:</strong> Início gradual da estimulação de colágeno</li>
+                    <li>✓ <strong>2 a 3 meses:</strong> Melhora progressiva visível e contínua</li>
+                    <li>✓ <strong>3 a 6 meses:</strong> Resultado máximo completamente atingido</li>
+                    <li>✓ <strong>Duração:</strong> até 18 a 24 meses (muito duradouro)</li>
+                </ul>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">O Resultado Final</h4>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                    A pele se torna progressivamente mais firme, uniforme e com aparência significativamente mais jovem ao longo do tempo. Os resultados são muito naturais porque envolvem a reconstrução real da estrutura de colágeno da pele, não apenas preenchimento. O rosto aparenta mais volume, elasticidade e luminosidade.
+                </p>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Manutenção</h4>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                    Com duração de até 24 meses, o bioestimulador oferece uma das maiores longevidades entre os procedimentos estéticos. Manutenção anual é geralmente recomendada para manter os resultados otimizados.
+                </p>
+            </div>
+            <div id="colageno-posprocedimento" class="tab-content">
+                <h3 class="modal-section-title">Cuidados Pós-Procedimento</h3>
+                
+                <h4 style="color: #ffffff; margin-top: 0; margin-bottom: 15px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Cuidados Essenciais Após Aplicação</h4>
+                <ul class="conteudo-lista" style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px;">
+                    <li>⚠️ <strong>Realizar massagens:</strong> Conforme orientação profissional (ESSENCIAL para estimular)</li>
+                    <li>⚠️ <strong>Sem exposição solar intensa:</strong> Proteção solar 50+ é fundamental</li>
+                    <li>⚠️ <strong>Sem atividades físicas intensas:</strong> Evitar por 24 horas</li>
+                    <li>⚠️ <strong>Sem calor excessivo:</strong> Evitar sauna e banho muito quente</li>
+                    <li>⚠️ <strong>Sem álcool em excesso:</strong> Nos primeiros dias após procedimento</li>
+                </ul>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 15px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Reações Normais e Esperadas</h4>
+                <ul class="conteudo-lista">
+                    <li>ℹ️ <strong>Leve inchaço:</strong> Normal, desaparece em 2-3 dias</li>
+                    <li>ℹ️ <strong>Vermelhidão:</strong> Esperada, diminui gradualmente</li>
+                    <li>ℹ️ <strong>Pequenos hematomas:</strong> Possível, resolvem naturalmente</li>
+                    <li>ℹ️ <strong>Sensibilidade local:</strong> Diminui nos dias seguintes</li>
+                </ul>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 15px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Recomendações Importantes</h4>
+                <ul class="conteudo-lista">
+                    <li>✓ Seguir corretamente o protocolo de sessões indicado</li>
+                    <li>✓ Aumentar ingestão de água e proteína (ajuda estimulação de colágeno)</li>
+                    <li>✓ Usar compressas frias se necessário reduzir inchaço</li>
+                    <li>✓ Manter a pele bem hidratada diariamente</li>
+                    <li>✓ Evitar procedimentos faciais adicionais por 2 semanas</li>
+                    <li>✓ Retorno para avaliação conforme agendado</li>
+                    <li>✓ Cumprir corretamente o intervalo entre sessões (4-6 semanas)</li>
+                </ul>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Processo de Estimulação</h4>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                    Após a aplicação, o organismo inicia naturalmente um processo de estimulação de colágeno. Este é um processo biológico gradual que resulta em rejuvenescimento progressivo. Melhoras contínuas ocorrem nos meses seguintes conforme o colágeno novo é produzido.
+                </p>
+
+                <p style="color: rgba(255,255,255,0.7); margin-top: 20px; font-size: 13px; font-style: italic;">
+                    ℹ️ Seguindo estas orientações, você maximizará os resultados do bioestimulador. Nosso time está sempre disponível para esclarecer dúvidas!
+                </p>
+            </div>
+            <a href="https://wa.me/5527988262007" class="modal-button-whatsapp" target="_blank">
+                <span>💬 Agende sua consulta</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Modal Preenchimento Labial -->
+    <div id="modal-labial" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('modal-labial')">&times;</span>
+            <div class="modal-header-layout">
+                <div class="modal-image-small">
+                    <img src="Fotos/preenchimento-labial.jpg" alt="Preenchimento Labial">
+                </div>
+                <div class="modal-header-info">
+                    <h2>Preenchimento Labial</h2>
+                    <p class="modal-subtitle">Lábios volumosos e naturais</p>
+                </div>
+            </div>
+            <div class="modal-tabs">
+                <button class="tab-button active" onclick="openTab(event, 'labial-desc')">Descrição</button>
+                <button class="tab-button" onclick="openTab(event, 'labial-beneficios')">Benefícios</button>
+                <button class="tab-button" onclick="openTab(event, 'labial-resultado')">Resultado</button>
+                <button class="tab-button" onclick="openTab(event, 'labial-posprocedimento')">Pós-Procedimento</button>
+            </div>
+            
+            <div id="labial-desc" class="tab-content active">
+                <h3 class="modal-section-title">Sobre o Procedimento</h3>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                    O preenchimento labial é um procedimento estético injetável realizado com Ácido hialurônico, substância biocompatível e reabsorvível pelo organismo. Seu objetivo é proporcionar volume, definição e hidratação aos lábios, respeitando a anatomia facial e a naturalidade.
+                </p>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Indicações</h4>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                    Pode ser utilizado tanto para aumento quanto para rejuvenescimento labial (perda de volume com o envelhecimento). Também permite definir o arco do cupido, corrigir assimetrias, melhorar projeção labial e suavizar linhas periorais.
+                </p>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Aplicações Possíveis</h4>
+                <ul class="conteudo-lista">
+                    <li>✓ Aumento de volume labial</li>
+                    <li>✓ Definição do arco do cupido</li>
+                    <li>✓ Correção de assimetrias</li>
+                    <li>✓ Melhora de projeção labial</li>
+                    <li>✓ Suavização de linhas periorais ("código de barras")</li>
+                    <li>✓ Rejuvenescimento labial por perda de volume</li>
+                </ul>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Características do Produto</h4>
+                <ul class="conteudo-lista">
+                    <li>✓ <strong>Substância:</strong> Ácido hialurônico biocompatível</li>
+                    <li>✓ <strong>Reabsorção:</strong> Natural pelo organismo</li>
+                    <li>✓ <strong>Segurança:</strong> Procedimento reversível</li>
+                    <li>✓ <strong>Natureza:</strong> Resultados naturais e proporcionais</li>
+                </ul>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Cuidados Imediatos</h4>
+                <ul class="conteudo-lista" style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px;">
+                    <li>⚠️ <strong>Primeiras horas:</strong> Evitar alimentos muito quentes</li>
+                    <li>⚠️ <strong>Primeiras 24 horas:</strong> Não tocar, massagear ou pressionar os lábios</li>
+                    <li>⚠️ <strong>Primeiras 24 horas:</strong> Evitar atividade física intensa</li>
+                    <li>⚠️ <strong>Primeiras horas:</strong> Evitar exposição solar e calor</li>
+                </ul>
+            </div>
+            <div id="labial-beneficios" class="tab-content">
+                <h3 class="modal-section-title">Principais Benefícios</h3>
+                <ul class="conteudo-lista">
+                    <li>✓ Lábios mais volumosos, cheios e definidos</li>
+                    <li>✓ Contorno labial melhor definido e proporcionado</li>
+                    <li>✓ Realça a beleza natural do rosto</li>
+                    <li>✓ Procedimento rápido com resultados imediatos</li>
+                    <li>✓ Aparência natural e proporcionada à face</li>
+                    <li>✓ Sem cicatrizes ou marcas visíveis</li>
+                    <li>✓ Recuperação rápida com mínimo incômodo</li>
+                    <li>✓ Resultado personalizável conforme desejo</li>
+                </ul>
+            </div>
+            <div id="labial-resultado" class="tab-content">
+                <h3 class="modal-section-title">Quando Aparecem os Resultados</h3>
+                <ul class="conteudo-lista">
+                    <li>✓ Imediato: Resultado visível após procedimento</li>
+                    <li>✓ 2 semanas: Resultado final (inchaço regride)</li>
+                    <li>✓ Duração: 6-9 meses</li>
+                    <li>✓ Manutenção: Conforme desejado</li>
+                </ul>
+            </div>
+            <div id="labial-posprocedimento" class="tab-content">
+                <h3 class="modal-section-title">Cuidados Pós-Procedimento</h3>
+                <ul class="conteudo-lista">
+                    <li>✓ <strong>Primeiras 24 horas:</strong> Evitar alimentos muito quentes</li>
+                    <li>✓ <strong>Primeiras 24 horas:</strong> Não tocar ou massagear os lábios</li>
+                    <li>✓ <strong>Inchaço:</strong> Normal, diminui em 24-48 horas</li>
+                    <li>✓ <strong>Recomendado:</strong> Usar gelo nos primeiros dias</li>
+                    <li>✓ <strong>Maquiagem:</strong> Evitar nas primeiras 12 horas</li>
+                    <li>✓ <strong>Beijos:</strong> Evitar por 48 horas</li>
+                    <li>✓ <strong>Protetor labial:</strong> Use com FPS 30+ constantemente</li>
+                    <li>✓ <strong>Alimentação:</strong> Alimentos moles e frios são ideais</li>
+                </ul>
+            </div>
+            <a href="https://wa.me/5527988262007" class="modal-button-whatsapp" target="_blank">
+                <span>💬 Agende sua consulta</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Modal Preenchimento Facial -->
+    <div id="modal-facial" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('modal-facial')">&times;</span>
+            <div class="modal-header-layout">
+                <div class="modal-image-small">
+                    <img src="Fotos/preenchimento-facial.jpg" alt="Preenchimento Facial">
+                </div>
+                <div class="modal-header-info">
+                    <h2>Preenchimento Facial</h2>
+                    <p class="modal-subtitle">Restaure volume e defina contornos</p>
+                </div>
+            </div>
+            <div class="modal-tabs">
+                <button class="tab-button active" onclick="openTab(event, 'facial-desc')">Descrição</button>
+                <button class="tab-button" onclick="openTab(event, 'facial-beneficios')">Benefícios</button>
+                <button class="tab-button" onclick="openTab(event, 'facial-resultado')">Resultado</button>
+                <button class="tab-button" onclick="openTab(event, 'facial-posprocedimento')">Pós-Procedimento</button>
+            </div>
+            
+            <div id="facial-desc" class="tab-content active">
+                <h3 class="modal-section-title">Sobre o Procedimento</h3>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                    O preenchimento facial com Ácido hialurônico é indicado para restaurar volumes perdidos, redefinir contornos e suavizar sulcos faciais. É um procedimento versátil que proporciona rejuvenescimento imediato e resultados personalizados.
+                </p>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Áreas Tratadas</h4>
+                <ul class="conteudo-lista">
+                    <li>✓ <strong>Sulco nasogeniano:</strong> Bigode chinês</li>
+                    <li>✓ <strong>Olheiras profundas:</strong> Preenchimento periocular</li>
+                    <li>✓ <strong>Malar:</strong> Maçãs do rosto</li>
+                    <li>✓ <strong>Mandíbula:</strong> Definição da jawline</li>
+                    <li>✓ <strong>Mento:</strong> Aumento e proporção do queixo</li>
+                </ul>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Como Funciona</h4>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                    O ácido hialurônico é aplicado estrategicamente nas áreas que necessitam de volume e definição. Além de preencher sulcos, ele promove hidratação profunda e sustentação da pele, criando resultados naturais e harmoniosos.
+                </p>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Detalhes do Procedimento</h4>
+                <ul class="conteudo-lista">
+                    <li>✓ <strong>Técnica:</strong> Minimamente invasiva com precisão</li>
+                    <li>✓ <strong>Anestesia:</strong> Anestésico tópico ou local</li>
+                    <li>✓ <strong>Duração:</strong> 30-60 minutos</li>
+                    <li>✓ <strong>Recuperação:</strong> Mínima</li>
+                </ul>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Cuidados Imediatos</h4>
+                <ul class="conteudo-lista" style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px;">
+                    <li>⚠️ <strong>Primeiras horas:</strong> Evitar manipulação da área</li>
+                    <li>⚠️ <strong>Primeiras 4 horas:</strong> Não deitar nas primeiras horas</li>
+                    <li>⚠️ <strong>Primeiras 24 horas:</strong> Suspender exercícios intensos</li>
+                    <li>⚠️ <strong>Possível:</strong> Edema e sensibilidade leve</li>
+                </ul>
+            </div>
+            <div id="facial-beneficios" class="tab-content">
+                <h3 class="modal-section-title">Principais Benefícios</h3>
+                <ul class="conteudo-lista">
+                    <li>✓ Preenche rugas e sulcos faciais profundos</li>
+                    <li>✓ Restaura volume perdido com a idade</li>
+                    <li>✓ Define contornos e realça traços desejados</li>
+                    <li>✓ Resultados imediatos e naturais</li>
+                    <li>✓ Procedimento versátil com múltiplas aplicações</li>
+                    <li>✓ Recuperação rápida com mínimo incômodo</li>
+                    <li>✓ Rejuvenescimento facial equilibrado e harmonioso</li>
+                    <li>✓ Produto biocompatível e completamente seguro</li>
+                </ul>
+            </div>
+            <div id="facial-resultado" class="tab-content">
+                <h3 class="modal-section-title">Quando Aparecem os Resultados</h3>
+                <ul class="conteudo-lista">
+                    <li>✓ Imediato: Resultado visível após procedimento</li>
+                    <li>✓ 2 semanas: Resultado final</li>
+                    <li>✓ Duração: 6-12 meses (depende do produto)</li>
+                    <li>✓ Manutenção: Periódica conforme necessário</li>
+                </ul>
+            </div>
+            <div id="facial-posprocedimento" class="tab-content">
+                <h3 class="modal-section-title">Cuidados Pós-Procedimento</h3>
+                <ul class="conteudo-lista">
+                    <li>✓ <strong>Primeiras 24 horas:</strong> Evitar massagens na face</li>
+                    <li>✓ <strong>Primeiras 48 horas:</strong> Não fazer exercícios intensos</li>
+                    <li>✓ <strong>Inchaço leve:</strong> Normal, desaparece em 3-5 dias</li>
+                    <li>✓ <strong>Recomendado:</strong> Compressas frias para edema</li>
+                    <li>✓ <strong>Maquiagem:</strong> Pode usar após 24 horas com cuidado</li>
+                    <li>✓ <strong>Protetor solar:</strong> Use 50+ por 2 semanas</li>
+                    <li>✓ <strong>Atividades aquáticas:</strong> Evitar por 48 horas</li>
+                    <li>✓ <strong>Álcool e cigarro:</strong> Evitar por 48 horas</li>
+                </ul>
+            </div>
+            <a href="https://wa.me/5527988262007" class="modal-button-whatsapp" target="_blank">
+                <span>💬 Agende sua consulta</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Modal Lipoenzima Papada -->
+    <div id="modal-papada" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('modal-papada')">&times;</span>
+            <div class="modal-header-layout">
+                <div class="modal-image-small">
+                    <img src="Fotos/Lipoenzima-de-papada.jpg" alt="Lipoenzima de Papada">
+                </div>
+                <div class="modal-header-info">
+                    <h2>Lipoenzima de Papada</h2>
+                    <p class="modal-subtitle">Elimine a papada sem cirurgia</p>
+                </div>
+            </div>
+            <div class="modal-tabs">
+                <button class="tab-button active" onclick="openTab(event, 'papada-desc')">Descrição</button>
+                <button class="tab-button" onclick="openTab(event, 'papada-beneficios')">Benefícios</button>
+                <button class="tab-button" onclick="openTab(event, 'papada-resultado')">Resultado</button>
+                <button class="tab-button" onclick="openTab(event, 'papada-posprocedimento')">Pós-Procedimento</button>
+            </div>
+            
+            <div id="papada-desc" class="tab-content active">
+                <h3 class="modal-section-title">Sobre o Procedimento</h3>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                    Procedimento injetável que utiliza Ácido deoxicólico para promover a destruição das células de gordura na região submentoniana (papada). Após a aplicação, o organismo elimina naturalmente essa gordura ao longo das semanas.
+                </p>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Como Funciona</h4>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                    O ácido deoxicólico degrada as membranas das células de gordura, levando à sua destruição. O corpo absorve naturalmente essas células destruídas através do metabolismo natural, resultando em redução progressiva da papada.
+                </p>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Vantagens do Procedimento</h4>
+                <ul class="conteudo-lista">
+                    <li>✓ Eliminação definitiva de gordura (células destruídas não retornam)</li>
+                    <li>✓ Alternativa segura à cirurgia</li>
+                    <li>✓ Manutenção permanente dos resultados</li>
+                    <li>✓ Personalizado conforme necessidade</li>
+                </ul>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Número de Sessões</h4>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                    Geralmente necessárias de 2 a 6 sessões, conforme a quantidade de gordura e objetivo do paciente. O intervalo entre sessões é importante para permitir a absorção.
+                </p>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Cuidados Imediatos</h4>
+                <ul class="conteudo-lista" style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px;">
+                    <li>⚠️ <strong>Inchaço importante:</strong> Esperado nos primeiros dias</li>
+                    <li>⚠️ <strong>Sensibilidade local:</strong> Normal e progressiva</li>
+                    <li>⚠️ <strong>Exposição solar:</strong> Evitar intensamente</li>
+                    <li>⚠️ <strong>Manipulação:</strong> Não massagear sem orientação</li>
+                </ul>
+            </div>
+            <div id="papada-beneficios" class="tab-content">
+                <h3 class="modal-section-title">Principais Benefícios</h3>
+                <ul class="conteudo-lista">
+                    <li>✓ Elimina a papada definitivamente sem cirurgia</li>
+                    <li>✓ Define e reforça a linha do queixo</li>
+                    <li>✓ Melhora significativa do perfil facial</li>
+                    <li>✓ Procedimento não invasivo e seguro</li>
+                    <li>✓ Sem cicatrizes, incisões ou pontos</li>
+                    <li>✓ Recuperação rápida com mínimo incômodo</li>
+                    <li>✓ Resultados naturais e duradouros</li>
+                    <li>✓ Efeito rejuvenescedor geral da face</li>
+                </ul>
+            </div>
+            <div id="papada-resultado" class="tab-content">
+                <h3 class="modal-section-title">Quando Aparecem os Resultados</h3>
+                <ul class="conteudo-lista">
+                    <li>✓ 2-4 semanas: Primeiras mudanças</li>
+                    <li>✓ 8-12 semanas: Resultado completo</li>
+                    <li>✓ Duração: Permanente (com manutenção)</li>
+                    <li>✓ Recomendado: 2-4 sessões geralmente</li>
+                </ul>
+            </div>
+            <div id="papada-posprocedimento" class="tab-content">
+                <h3 class="modal-section-title">Cuidados Pós-Procedimento</h3>
+                <ul class="conteudo-lista">
+                    <li>✓ <strong>Primeiras 24 horas:</strong> Não tocar ou massagear</li>
+                    <li>✓ <strong>Primeiras 48 horas:</strong> Sem exercícios físicos</li>
+                    <li>✓ <strong>Inchaço:</strong> Pode durar até 1 semana (normal)</li>
+                    <li>✓ <strong>Recomendado:</strong> Usar compressão ou faixa de suporte</li>
+                    <li>✓ <strong>Compressas frias:</strong> Aplicar nos primeiros dias</li>
+                    <li>✓ <strong>Hidratação:</strong> Beba bastante água</li>
+                    <li>✓ <strong>Posição ao dormir:</strong> Durma com a cabeça elevada</li>
+                    <li>✓ <strong>Drenagem:</strong> Sessões de drenagem linfática ajudam</li>
+                </ul>
+            </div>
+            <a href="https://wa.me/5527988262007" class="modal-button-whatsapp" target="_blank">
+                <span>💬 Agende sua consulta</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Modal Lipoenzima Gordura -->
+    <div id="modal-gordura" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('modal-gordura')">&times;</span>
+            <div class="modal-header-layout">
+                <div class="modal-image-small">
+                    <img src="Fotos/Lipoenzima-de-gordura.jpg" alt="Lipoenzima de Gordura">
+                </div>
+                <div class="modal-header-info">
+                    <h2>Lipoenzima de Gordura</h2>
+                    <p class="modal-subtitle">Elimine gordura localizada</p>
+                </div>
+            </div>
+            <div class="modal-tabs">
+                <button class="tab-button active" onclick="openTab(event, 'gordura-desc')">Descrição</button>
+                <button class="tab-button" onclick="openTab(event, 'gordura-beneficios')">Benefícios</button>
+                <button class="tab-button" onclick="openTab(event, 'gordura-resultado')">Resultado</button>
+                <button class="tab-button" onclick="openTab(event, 'gordura-posprocedimento')">Pós-Procedimento</button>
+            </div>
+            
+            <div id="gordura-desc" class="tab-content active">
+                <h3 class="modal-section-title">Sobre o Procedimento</h3>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                    A Lipoenzima de Gordura elimina depósitos localizados de gordura através de injeções de substâncias lipolíticas especializadas. Perfeita para reduzir gordura resistente em áreas como bochechas, papada, culote, barriga e flancos, criando um contorno corporal mais definido e harmonioso.
+
+O tratamento funciona estimulando a metabolização natural das células de gordura, que são progressivamente eliminadas sem causar danos aos tecidos adjacentes. Oferece resultados permanentes com aparência natural.
+                </p>
+            </div>
+            <div id="gordura-beneficios" class="tab-content">
+                <h3 class="modal-section-title">Principais Benefícios</h3>
+                <ul class="conteudo-lista">
+                    <li>✓ Elimina gordura localizada permanentemente</li>
+                    <li>✓ Procedimento não invasivo e seguro</li>
+                    <li>✓ Sem cirurgia, anestesia ou internação</li>
+                    <li>✓ Recuperação imediata com mínimo incômodo</li>
+                    <li>✓ Resultados visíveis e duradouros</li>
+                    <li>✓ Contorno corporal mais definido</li>
+                    <li>✓ Tratável em múltiplas áreas do corpo</li>
+                    <li>✓ Aumento de confiança e autoestima</li>
+                </ul>
+            </div>
+            <div id="gordura-resultado" class="tab-content">
+                <h3 class="modal-section-title">Quando Aparecem os Resultados</h3>
+                <ul class="conteudo-lista">
+                    <li>✓ 2-4 semanas: Primeiras mudanças</li>
+                    <li>✓ 8-12 semanas: Resultado máximo</li>
+                    <li>✓ Duração: Permanente</li>
+                    <li>✓ Recomendado: 1-3 sessões</li>
+                </ul>
+            </div>
+            <div id="gordura-posprocedimento" class="tab-content">
+                <h3 class="modal-section-title">Cuidados Pós-Procedimento</h3>
+                <ul class="conteudo-lista">
+                    <li>✓ <strong>Primeiras 24 horas:</strong> Evitar massagens</li>
+                    <li>✓ <strong>Primeiras 48 horas:</strong> Sem exercício intenso</li>
+                    <li>✓ <strong>Inchaço:</strong> Normal, pode durar até 7 dias</li>
+                    <li>✓ <strong>Recomendado:</strong> Usar compressão e drenagem linfática</li>
+                    <li>✓ <strong>Compressas frias:</strong> Reduzem edema e inflamação</li>
+                    <li>✓ <strong>Hidratação:</strong> Aumento importante (3L água/dia)</li>
+                    <li>✓ <strong>Dieta:</strong> Alimentos anti-inflamatórios</li>
+                    <li>✓ <strong>Atividade:</strong> Caminhadas leves são recomendadas</li>
+                </ul>
+            </div>
+            <a href="https://wa.me/5527988262007" class="modal-button-whatsapp" target="_blank">
+                <span>💬 Agende sua consulta</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Modal Protocolo Estrias -->
+    <div id="modal-estrias" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('modal-estrias')">&times;</span>
+            <div class="modal-header-layout">
+                <div class="modal-image-small">
+                    <img src="Fotos/protocolo-de-estrias.jpg" alt="Protocolo Estrias">
+                </div>
+                <div class="modal-header-info">
+                    <h2>Protocolo de Estrias</h2>
+                    <p class="modal-subtitle">Reduza visibilidade de estrias</p>
+                </div>
+            </div>
+            <div class="modal-tabs">
+                <button class="tab-button active" onclick="openTab(event, 'estrias-desc')">Descrição</button>
+                <button class="tab-button" onclick="openTab(event, 'estrias-beneficios')">Benefícios</button>
+                <button class="tab-button" onclick="openTab(event, 'estrias-resultado')">Resultado</button>
+                <button class="tab-button" onclick="openTab(event, 'estrias-posprocedimento')">Pós-Procedimento</button>
+            </div>
+            
+            <div id="estrias-desc" class="tab-content active">
+                <h3 class="modal-section-title">Sobre o Procedimento</h3>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                    Protocolo personalizado que combina técnicas avançadas para tratar estrias de forma eficaz. O objetivo é estimular colágeno e regenerar a pele afetada pelas estrias, reduzindo sua profundidade e coloração.
+                </p>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Técnicas Utilizadas</h4>
+                <ul class="conteudo-lista">
+                    <li>✓ <strong>Microagulhamento:</strong> Estimulação percutânea de colágeno</li>
+                    <li>✓ <strong>Drug delivery:</strong> Liberação de ativos nas camadas da pele</li>
+                    <li>✓ <strong>Bioestimuladores:</strong> Estímulo natural de colágeno</li>
+                    <li>✓ <strong>Outras técnicas:</strong> Conforme análise e necessidade</li>
+                </ul>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Processo de Tratamento</h4>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                    O protocolo é personalizado conforme o tipo, profundidade e idade das estrias. Múltiplas sessões progressivas melhoram a textura, elasticidade e aparência geral da pele, reduzindo drasticamente o aspecto das estrias e deixando a pele mais uniforme.
+                </p>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Características</h4>
+                <ul class="conteudo-lista">
+                    <li>✓ <strong>Eficácia:</strong> Reduz estrias vermelhas e brancas</li>
+                    <li>✓ <strong>Método:</strong> Não invasivo e seguro</li>
+                    <li>✓ <strong>Sessões:</strong> Geralmente 3-5 sessões para melhora visível</li>
+                    <li>✓ <strong>Resultado:</strong> Progressivo e durável</li>
+                </ul>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Cuidados Imediatos</h4>
+                <ul class="conteudo-lista" style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px;">
+                    <li>⚠️ <strong>Vermelhidão temporária:</strong> Normal e esperada</li>
+                    <li>⚠️ <strong>Protetor solar:</strong> Uso obrigatório (50+)</li>
+                    <li>⚠️ <strong>Exposição ao sol:</strong> Evitar por até 7 dias</li>
+                    <li>⚠️ <strong>Manutenção:</strong> Mensal para melhores resultados</li>
+                </ul>
+            </div>
+            <div id="estrias-beneficios" class="tab-content">
+                <h3 class="modal-section-title">Principais Benefícios</h3>
+                <ul class="conteudo-lista">
+                    <li>✓ Reduz significativamente a visibilidade de estrias</li>
+                    <li>✓ Melhora notável de textura e uniformidade</li>
+                    <li>✓ Estimula regeneração de colágeno</li>
+                    <li>✓ Resultados progressivos e cumulativos</li>
+                    <li>✓ Funciona em estrias vermelhas e brancas</li>
+                    <li>✓ Deixa a pele mais elástica e firma</li>
+                    <li>✓ Protocolo customizado por tipo de estria</li>
+                    <li>✓ Aumento de confiança com resultado natural</li>
+                </ul>
+            </div>
+            <div id="estrias-resultado" class="tab-content">
+                <h3 class="modal-section-title">Quando Aparecem os Resultados</h3>
+                <ul class="conteudo-lista">
+                    <li>✓ 2-4 semanas: Melhoria visível</li>
+                    <li>✓ 2-3 meses: Resultado significativo</li>
+                    <li>✓ Duração: Progressiva e duradoura</li>
+                    <li>✓ Recomendado: Múltiplas sessões</li>
+                </ul>
+            </div>
+            <div id="estrias-posprocedimento" class="tab-content">
+                <h3 class="modal-section-title">Cuidados Pós-Procedimento</h3>
+                <ul class="conteudo-lista">
+                    <li>✓ <strong>Primeiras 24 horas:</strong> Evitar água quente</li>
+                    <li>✓ <strong>Primeiras 48 horas:</strong> Sem exercícios intensos</li>
+                    <li>✓ <strong>Vermelhidão:</strong> Normal, diminui em 3-5 dias</li>
+                    <li>✓ <strong>Recomendado:</strong> Usar protetor solar 50+</li>
+                    <li>✓ <strong>Hidratação:</strong> Mantenha a pele bem hidratada</li>
+                    <li>✓ <strong>Roupas:</strong> Use roupas macias e confortáveis</li>
+                    <li>✓ <strong>Produtos:</strong> Evite séruns ácidos por 48 horas</li>
+                    <li>✓ <strong>Sessões:</strong> Manutenção mensal recomendada</li>
+                </ul>
+            </div>
+            <a href="https://wa.me/5527988262007" class="modal-button-whatsapp" target="_blank">
+                <span>💬 Agende sua consulta</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Modal Microagulhamento -->
+    <div id="modal-microagulhamento" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('modal-microagulhamento')">&times;</span>
+            <div class="modal-header-layout">
+                <div class="modal-image-small">
+                    <img src="Fotos/microagulhamento.jpg" alt="Microagulhamento">
+                </div>
+                <div class="modal-header-info">
+                    <h2>Microagulhamento</h2>
+                    <p class="modal-subtitle">Rejuvenescimento natural e eficaz</p>
+                </div>
+            </div>
+            <div class="modal-tabs">
+                <button class="tab-button active" onclick="openTab(event, 'microagulhamento-desc')">Descrição</button>
+                <button class="tab-button" onclick="openTab(event, 'microagulhamento-beneficios')">Benefícios</button>
+                <button class="tab-button" onclick="openTab(event, 'microagulhamento-resultado')">Resultado</button>
+                <button class="tab-button" onclick="openTab(event, 'microagulhamento-posprocedimento')">Pós-Procedimento</button>
+            </div>
+            
+            <div id="microagulhamento-desc" class="tab-content active">
+                <h3 class="modal-section-title">Sobre o Procedimento</h3>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                    Procedimento que utiliza microperfurações controladas na pele para estimular o colágeno naturalmente (indução percutânea). Pode ser associado a ativos especiais para potencializar ainda mais os resultados obtidos.
+                </p>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Como Funciona</h4>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                    As microperfurações criam uma reação de cicatrização controlada, estimulando naturalmente a produção de colágeno e elastina. Este processo resulta em rejuvenescimento global da pele sem lesão significativa.
+                </p>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Benefícios Específicos</h4>
+                <ul class="conteudo-lista">
+                    <li>✓ Estímulo intenso e natural de colágeno</li>
+                    <li>✓ Melhora significativa de acne e cicatrizes</li>
+                    <li>✓ Redução de poros dilatados</li>
+                    <li>✓ Clareamento de manchas e melasma</li>
+                    <li>✓ Rejuvenescimento global da pele</li>
+                </ul>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Resultados Esperados</h4>
+                <ul class="conteudo-lista">
+                    <li>✓ Início visível em 7 dias</li>
+                    <li>✓ Melhora progressiva contínua</li>
+                    <li>✓ Mais evidentes após sessões seriadas</li>
+                </ul>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Cuidados Imediatos</h4>
+                <ul class="conteudo-lista" style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px;">
+                    <li>⚠️ <strong>Vermelhidão:</strong> Por 24 a 72 horas (esperada)</li>
+                    <li>⚠️ <strong>Maquiagem:</strong> Não usar por 24 horas</li>
+                    <li>⚠️ <strong>Protetor solar:</strong> Uso rigoroso e obrigatório</li>
+                    <li>⚠️ <strong>Calor e suor:</strong> Evitar atividades que causem suor</li>
+                </ul>
+            </div>
+            <div id="microagulhamento-beneficios" class="tab-content">
+                <h3 class="modal-section-title">Principais Benefícios</h3>
+                <ul class="conteudo-lista">
+                    <li>✓ Estimula produção natural de colágeno</li>
+                    <li>✓ Melhora significativa de textura e poros</li>
+                    <li>✓ Reduz rugas e linhas de expressão</li>
+                    <li>✓ Minimiza cicatrizes de acne profundas</li>
+                    <li>✓ Uniformiza tom e aumenta luminosidade</li>
+                    <li>✓ Restaura elasticidade da pele</li>
+                    <li>✓ Tratável em corpo inteiro</li>
+                    <li>✓ Recuperação rápida com mínimo incômodo</li>
+                </ul>
+            </div>
+            <div id="microagulhamento-resultado" class="tab-content">
+                <h3 class="modal-section-title">Quando Aparecem os Resultados</h3>
+                <ul class="conteudo-lista">
+                    <li>✓ 1-2 semanas: Pele mais luminosa</li>
+                    <li>✓ 4-6 semanas: Melhoria visível</li>
+                    <li>✓ Duração: Progressiva e duradoura</li>
+                    <li>✓ Recomendado: Sessões periódicas</li>
+                </ul>
+            </div>
+            <div id="microagulhamento-posprocedimento" class="tab-content">
+                <h3 class="modal-section-title">Cuidados Pós-Procedimento</h3>
+                <ul class="conteudo-lista">
+                    <li>✓ <strong>Primeiras 24 horas:</strong> Não lavar o rosto com água quente</li>
+                    <li>✓ <strong>Primeiras 48 horas:</strong> Evitar maquiagem completa</li>
+                    <li>✓ <strong>Vermelhidão:</strong> Normal, desaparece em 24-48 horas</li>
+                    <li>✓ <strong>Recomendado:</strong> Usar soro com vitamina C</li>
+                    <li>✓ <strong>Protetor solar:</strong> Use 50+ diariamente por 2 semanas</li>
+                    <li>✓ <strong>Hidratação:</strong> Aplique hidratantes gentis e leves</li>
+                    <li>✓ <strong>Evitar:</strong> Ácidos, retinol e vitamina C pura por 48h</li>
+                    <li>✓ <strong>Sessões:</strong> Manutenção mensal para melhores resultados</li>
+                </ul>
+            </div>
+            <a href="https://wa.me/5527988262007" class="modal-button-whatsapp" target="_blank">
+                <span>💬 Agende sua consulta</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Modal Limpeza de Pele -->
+    <div id="modal-limpeza" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('modal-limpeza')">&times;</span>
+            <div class="modal-header-layout">
+                <div class="modal-image-small">
+                    <img src="Fotos/limpeza-de-pele.jpg" alt="Limpeza de Pele">
+                </div>
+                <div class="modal-header-info">
+                    <h2>Limpeza de Pele</h2>
+                    <p class="modal-subtitle">Pele limpa, radiante e saudável</p>
+                </div>
+            </div>
+            <div class="modal-tabs">
+                <button class="tab-button active" onclick="openTab(event, 'limpeza-desc')">Descrição</button>
+                <button class="tab-button" onclick="openTab(event, 'limpeza-beneficios')">Benefícios</button>
+                <button class="tab-button" onclick="openTab(event, 'limpeza-resultado')">Resultado</button>
+                <button class="tab-button" onclick="openTab(event, 'limpeza-posprocedimento')">Pós-Procedimento</button>
+            </div>
+            
+            <div id="limpeza-desc" class="tab-content active">
+                <h3 class="modal-section-title">Sobre o Procedimento</h3>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                    Procedimento que promove a higienização profunda da pele, com extração de comedões (cravos), controle da oleosidade e renovação celular. Deixa a pele limpa, saudável e preparada para absorver melhor os tratamentos.
+                </p>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Etapas do Procedimento</h4>
+                <ul class="conteudo-lista">
+                    <li>✓ <strong>Higienização:</strong> Limpeza completa da pele</li>
+                    <li>✓ <strong>Esfoliação:</strong> Renovação celular controlada</li>
+                    <li>✓ <strong>Extração:</strong> Remoção de comedões e impurezas</li>
+                    <li>✓ <strong>Máscara calmante:</strong> Acalmamento e proteção final</li>
+                </ul>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Indicações</h4>
+                <ul class="conteudo-lista">
+                    <li>✓ Pele oleosa e acneica</li>
+                    <li>✓ Poro dilatados</li>
+                    <li>✓ Comedões e cravos</li>
+                    <li>✓ Qualquer tipo de pele que necessite limpeza profunda</li>
+                </ul>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Resultados Imediatos</h4>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                    Pele imediatamente mais limpa, luminosa e uniforme. Redução de acne visível, melhor controle da oleosidade e preparação ideal da pele para receber outros tratamentos.
+                </p>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Cuidados Imediatos</h4>
+                <ul class="conteudo-lista" style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px;">
+                    <li>⚠️ <strong>Exposição solar:</strong> Evitar após procedimento</li>
+                    <li>⚠️ <strong>Manipulação:</strong> Não espremer a pele</li>
+                    <li>⚠️ <strong>Protetor solar:</strong> Uso obrigatório (30+)</li>
+                    <li>⚠️ <strong>Sensibilidade:</strong> Leve vermelhidão é normal</li>
+                </ul>
+            </div>
+            <div id="limpeza-beneficios" class="tab-content">
+                <h3 class="modal-section-title">Principais Benefícios</h3>
+                <ul class="conteudo-lista">
+                    <li>✓ Remove impurezas e sebo profundamente</li>
+                    <li>✓ Pele imediatamente mais radiante e luminosa</li>
+                    <li>✓ Reduz poros dilatados e acne</li>
+                    <li>✓ Prepara pele para absorver ingredientes</li>
+                    <li>✓ Reduz inflamação e vermelhidão</li>
+                    <li>✓ Previne acne futura e comedones</li>
+                    <li>✓ Pele macia, limpa e renovada</li>
+                    <li>✓ Resultados visíveis após uma sessão</li>
+                </ul>
+            </div>
+            <div id="limpeza-resultado" class="tab-content">
+                <h3 class="modal-section-title">Quando Aparecem os Resultados</h3>
+                <ul class="conteudo-lista">
+                    <li>✓ Imediato: Pele mais limpa e radiante</li>
+                    <li>✓ Efeito duradouro: 2-4 semanas</li>
+                    <li>✓ Duração: Aproximadamente 30 dias</li>
+                    <li>✓ Recomendado: Mensal para manutenção</li>
+                </ul>
+            </div>
+            <div id="limpeza-posprocedimento" class="tab-content">
+                <h3 class="modal-section-title">Cuidados Pós-Procedimento</h3>
+                <ul class="conteudo-lista">
+                    <li>✓ <strong>Primeiras 2 horas:</strong> Não tocar o rosto</li>
+                    <li>✓ <strong>Primeiras 24 horas:</strong> Evitar maquiagem pesada</li>
+                    <li>✓ <strong>Sensibilidade:</strong> Normal por 24-48 horas</li>
+                    <li>✓ <strong>Recomendado:</strong> Usar apenas produtos suaves</li>
+                    <li>✓ <strong>Limpeza:</strong> Lave com água morna e sabonete neutro</li>
+                    <li>✓ <strong>Protetor solar:</strong> Use 30+ no dia seguinte</li>
+                    <li>✓ <strong>Ácidos:</strong> Evite por 48 horas</li>
+                    <li>✓ <strong>Manutenção:</strong> Semanal ou quinzenal conforme recomendado</li>
+                </ul>
+            </div>
+            <a href="https://wa.me/5527988262007" class="modal-button-whatsapp" target="_blank">
+                <span>💬 Agende sua consulta</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Modal Terapia Capilar -->
+    <div id="modal-terapiacapilar" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('modal-terapiacapilar')">&times;</span>
+            <div class="modal-header-layout">
+                <div class="modal-image-small">
+                    <img src="Fotos/terapiacapilar.jpg" alt="Terapia Capilar">
+                </div>
+                <div class="modal-header-info">
+                    <h2>Terapia Capilar</h2>
+                    <p class="modal-subtitle">Cabelos fortes, brilhosos e saudáveis</p>
+                </div>
+            </div>
+            <div class="modal-tabs">
+                <button class="tab-button active" onclick="openTab(event, 'terapiacapilar-desc')">Descrição</button>
+                <button class="tab-button" onclick="openTab(event, 'terapiacapilar-beneficios')">Benefícios</button>
+                <button class="tab-button" onclick="openTab(event, 'terapiacapilar-resultado')">Resultado</button>
+                <button class="tab-button" onclick="openTab(event, 'terapiacapilar-posprocedimento')">Pós-Procedimento</button>
+            </div>
+            
+            <div id="terapiacapilar-desc" class="tab-content active">
+                <h3 class="modal-section-title">Sobre o Procedimento</h3>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                    Tratamento especializado voltado para saúde do couro cabeludo e crescimento dos fios. Pode incluir técnicas como microagulhamento capilar e aplicação de ativos específicos para revitalizar e fortalecer os cabelos.
+                </p>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Indicações Principais</h4>
+                <ul class="conteudo-lista">
+                    <li>✓ Queda capilar excessiva</li>
+                    <li>✓ Alopecia (em vários graus)</li>
+                    <li>✓ Caspa e oleosidade do couro</li>
+                    <li>✓ Enfraquecimento dos fios</li>
+                    <li>✓ Ressecamento e frizz</li>
+                </ul>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Técnicas Utilizadas</h4>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                    Combinação de técnicas como microagulhamento do couro cabeludo para estimular circulação e colágeno, associado a séruns e ativos especializados que fortalecem e promovem crescimento capilar.
+                </p>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Duração do Tratamento</h4>
+                <ul class="conteudo-lista">
+                    <li>✓ <strong>Sessões recomendadas:</strong> 4 a 6 para melhora visível</li>
+                    <li>✓ <strong>Intervalo:</strong> Conforme protocolo indicado</li>
+                    <li>✓ <strong>Resultados:</strong> Variam conforme a causa da queda</li>
+                </ul>
+
+                <h4 style="color: #ffffff; margin-top: 20px; margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Cuidados Imediatos</h4>
+                <ul class="conteudo-lista" style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px;">
+                    <li>⚠️ <strong>Lavagem:</strong> Evitar por algumas horas se orientado</li>
+                    <li>⚠️ <strong>Química capilar:</strong> Evitar procedimentos imediatos</li>
+                    <li>⚠️ <strong>Proteção solar:</strong> Se necessário sair ao sol</li>
+                    <li>⚠️ <strong>Protocolo completo:</strong> Seguir rigorosamente</li>
+                </ul>
+            </div>
+            <div id="terapiacapilar-beneficios" class="tab-content">
+                <h3 class="modal-section-title">Principais Benefícios</h3>
+                <ul class="conteudo-lista">
+                    <li>✓ Fortalece cabelos significativamente</li>
+                    <li>✓ Reduz queda capilar notavelmente</li>
+                    <li>✓ Restaura brilho, maciez e silhueta</li>
+                    <li>✓ Hidratação profunda e duradoura</li>
+                    <li>✓ Reconstrói e seala a cutícula</li>
+                    <li>✓ Aumenta resistência e reduz breakage</li>
+                    <li>✓ Deixa cabelo volumoso e vistoso</li>
+                    <li>✓ Resultados progressivos e cumulativos</li>
+                </ul>
+            </div>
+            <div id="terapiacapilar-resultado" class="tab-content">
+                <h3 class="modal-section-title">Quando Aparecem os Resultados</h3>
+                <ul class="conteudo-lista">
+                    <li>✓ Imediato: Brilho e maciez visíveis</li>
+                    <li>✓ 2-4 semanas: Redução de queda</li>
+                    <li>✓ Duração: 4-8 semanas</li>
+                    <li>✓ Recomendado: Sessões periódicas</li>
+                </ul>
+            </div>
+            <div id="terapiacapilar-posprocedimento" class="tab-content">
+                <h3 class="modal-section-title">Cuidados Pós-Procedimento</h3>
+                <ul class="conteudo-lista">
+                    <li>✓ <strong>Primeiras 24 horas:</strong> Não lavar o cabelo</li>
+                    <li>✓ <strong>Primeiras 48 horas:</strong> Evitar produtos químicos</li>
+                    <li>✓ <strong>Lavagem:</strong> Use água morna quando lavar</li>
+                    <li>✓ <strong>Recomendado:</strong> Usar condicionador e máscara regularmente</li>
+                    <li>✓ <strong>Secagem:</strong> Evite ar quente excessivo</li>
+                    <li>✓ <strong>Proteção:</strong> Use protetor térmico se secar com secador</li>
+                    <li>✓ <strong>Pente:</strong> Use pente largo em cabelos molhados</li>
+                    <li>✓ <strong>Manutenção:</strong> Sessões mensais para melhores resultados</li>
+                </ul>
+            </div>
+            <a href="https://wa.me/5527988262007" class="modal-button-whatsapp" target="_blank">
+                <span>💬 Agende sua consulta</span>
+            </a>
+        </div>
+    </div>
 
     <!-- MODALS DOS CURSOS -->
     <!-- Modal Toxina Botulínica -->
