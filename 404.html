@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clínica Burgarelli - Beleza Natural com Ciência</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -19,10 +22,14 @@
             --dark-blue: #1e3f5a;
             --very-dark-blue: #0f1f2e;
             --accent-blue: #3a6db5;
+            --luxury-black: #0a0a0a;
+            --dark-black: #1a1a1a;
             --light-gray: #d4d4d4;
             --white: #ffffff;
             --text-dark: #333333;
             --whatsapp-green: #25d366;
+            --gold: #d4af37;
+            --light-gold: #e8d4a8;
         }
 
         html {
@@ -33,26 +40,44 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: var(--text-dark);
             line-height: 1.6;
-            background: var(--white);
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f1f2e 100%);
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(44, 90, 160, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
         }
 
         /* ===== HEADER / NAVEGAÇÃO ===== */
         header {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
-            padding: 15px 0;
+            background: linear-gradient(135deg, var(--luxury-black) 0%, var(--dark-black) 50%, var(--primary-blue) 100%);
+            padding: 20px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(212, 175, 55, 0.3);
+            border-bottom: 2px solid var(--gold);
         }
 
         .header-container {
             max-width: 100%;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 40px;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
+            gap: 40px;
         }
 
         .logo {
@@ -60,19 +85,21 @@
             align-items: center;
             gap: 10px;
             flex: 0 0 auto;
+            margin-right: 0;
         }
 
         .logo img {
-            height: 50px;
+            height: 70px;
             width: auto;
+            filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.3));
         }
 
         nav {
             display: flex;
-            gap: 50px;
+            gap: 25px;
             align-items: center;
             justify-content: center;
-            flex: 1;
+            flex: 0 0 auto;
         }
 
         nav a {
@@ -90,237 +117,41 @@
         }
 
         .nav-cta-button {
-            background: var(--whatsapp-green);
-            color: var(--white);
-            padding: 10px 25px;
-            border-radius: 20px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--light-gold) 100%);
+            color: var(--luxury-black);
+            padding: 12px 30px;
+            border-radius: 25px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 12px;
             transition: all 0.3s ease;
-            border: none;
+            border: 2px solid var(--gold);
             cursor: pointer;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.8px;
             white-space: nowrap;
-            margin-left: 0;
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
         }
 
         .nav-cta-button:hover {
-            background: #1ead50;
-            transform: scale(1.08);
-        }
-
-        /* ===== ESPECIALISTA SECTION ===== */
-        .especialista-section {
-            background: linear-gradient(135deg, var(--secondary-blue) 0%, var(--primary-blue) 100%);
-            padding: 50px 20px;
-            color: var(--white);
-        }
-
-        .especialista-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .especialista-title {
-            text-align: center;
-            font-size: 32px;
-            font-weight: 400;
-            letter-spacing: 1px;
-            margin-bottom: 40px;
-            text-transform: uppercase;
-        }
-
-        .cursos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .curso-card {
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .curso-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .curso-image {
-            width: 100%;
-            height: 180px;
-            background: rgba(255, 255, 255, 0.08);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: rgba(255, 255, 255, 0.4);
-            font-size: 13px;
-            overflow: hidden;
-        }
-
-        .curso-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .curso-info {
-            background: var(--primary-blue);
-            padding: 20px;
-            text-align: center;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .curso-nome {
-            font-size: 14px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 10px;
-            line-height: 1.4;
-        }
-
-        .curso-button {
-            background: linear-gradient(135deg, #e8d4a8 0%, #d4af37 50%, #c9a961 100%);
-            color: #333333;
-            padding: 10px 20px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 12px;
-            transition: all 0.3s ease;
-            border: 1px solid #c9a961;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-            display: inline-block;
-            margin-top: 10px;
-            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.5);
-        }
-
-        .curso-button:hover {
-            background: linear-gradient(135deg, #f0deb8 0%, #e8d4a8 50%, #d4af37 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(212, 175, 55, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.6);
-        }
-
-        /* ===== AVALIAÇÕES SECTION ===== */
-        .avaliacoes-section {
-            background: linear-gradient(135deg, var(--secondary-blue) 0%, var(--primary-blue) 100%);
-            padding: 50px 20px;
-            color: var(--white);
-        }
-
-        .avaliacoes-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .avaliacoes-title {
-            text-align: center;
-            font-size: 32px;
-            font-weight: 400;
-            letter-spacing: 1px;
-            margin-bottom: 40px;
-            text-transform: uppercase;
-        }
-
-        .avaliacoes-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .avaliacao-card {
-            background: rgba(255, 255, 255, 0.08);
-            padding: 25px;
-            border-radius: 8px;
-            border-left: 4px solid var(--whatsapp-green);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .avaliacao-card:hover {
-            background: rgba(255, 255, 255, 0.12);
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .avaliacao-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: start;
-            margin-bottom: 12px;
-        }
-
-        .avaliacao-nome {
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 0.3px;
-        }
-
-        .avaliacao-stars {
-            color: var(--whatsapp-green);
-            font-size: 13px;
-            letter-spacing: 2px;
-        }
-
-        .avaliacao-texto {
-            font-size: 13px;
-            line-height: 1.7;
-            opacity: 0.9;
-        }
-
-        .avaliacao-data {
-            font-size: 11px;
-            opacity: 0.6;
-            margin-top: 12px;
-        }
-
-        .google-logo {
-            text-align: center;
-            margin-top: 30px;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .google-logo-text {
-            font-size: 12px;
-            opacity: 0.7;
-            margin-bottom: 10px;
-        }
-
-        .google-rating {
-            font-size: 24px;
-            font-weight: 600;
-            margin: 10px 0;
-        }
-
-        .google-stars {
-            color: var(--whatsapp-green);
-            font-size: 16px;
-            letter-spacing: 2px;
+            background: linear-gradient(135deg, var(--light-gold) 0%, var(--gold) 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.5);
+            border-color: var(--light-gold);
         }
 
         /* ===== HERO SECTION ===== */
         .hero {
-            background: linear-gradient(135deg, var(--secondary-blue) 0%, var(--primary-blue) 50%, var(--dark-blue) 100%);
-            padding: 60px 20px;
-            text-align: center;
+            background: linear-gradient(135deg, var(--dark-black) 0%, var(--luxury-black) 30%, var(--primary-blue) 100%);
+            padding: 0;
             color: var(--white);
             position: relative;
             overflow: hidden;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 3px solid var(--gold);
         }
 
         .hero::before {
@@ -330,72 +161,71 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.5) 50%, transparent 100%);
             pointer-events: none;
+            z-index: 2;
         }
 
         .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
-            margin: 0 auto;
+            position: absolute;
+            z-index: 15;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .hero-text {
+            padding: 60px 40px;
+            max-width: 600px;
             animation: fadeInDown 0.8s ease;
         }
 
         .hero h1 {
-            font-size: 48px;
-            font-weight: 300;
+            font-size: 56px;
+            font-weight: 600;
             letter-spacing: 2px;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
             line-height: 1.3;
             text-transform: uppercase;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            font-family: 'Playfair Display', serif;
         }
 
         .hero p {
-            font-size: 16px;
-            font-weight: 300;
+            font-size: 18px;
+            font-weight: 400;
             letter-spacing: 0.5px;
             margin-bottom: 20px;
-            opacity: 0.95;
+            opacity: 1;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            font-family: 'Montserrat', sans-serif;
         }
 
-        /* ===== HERO IMAGE SECTION ===== */
-        .hero-image {
-            background: linear-gradient(135deg, var(--secondary-blue) 0%, var(--primary-blue) 100%);
-            padding: 0;
-            text-align: center;
+        .hero-image-side {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
         }
 
-        .hero-image-container {
-            width: 100vw;
-            margin-left: calc(-50vw + 50%);
-            height: 400px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-image img,
-        .hero-image .placeholder {
+        .hero-image-side img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
         }
 
-        .hero-image .placeholder {
-            background: rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 14px;
-        }
-
         /* ===== SECTION: TRANSFORMAÇÕES ===== */
         .transformations {
-            background: linear-gradient(135deg, var(--secondary-blue) 0%, var(--primary-blue) 100%);
-            padding: 50px 20px;
+            background: linear-gradient(135deg, var(--luxury-black) 0%, var(--dark-black) 50%, var(--very-dark-blue) 100%);
+            padding: 60px 20px;
             color: var(--white);
+            border-top: 2px solid var(--gold);
+            border-bottom: 2px solid var(--gold);
         }
 
         .transformations-content {
@@ -405,31 +235,35 @@
 
         .transformations h2 {
             text-align: center;
-            font-size: 32px;
-            font-weight: 400;
-            letter-spacing: 1px;
+            font-size: 36px;
+            font-weight: 600;
+            letter-spacing: 2px;
             margin-bottom: 15px;
             text-transform: uppercase;
+            background: linear-gradient(135deg, var(--light-gold) 0%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .transformations p {
             text-align: center;
-            font-size: 15px;
+            font-size: 16px;
             line-height: 1.8;
             margin-bottom: 40px;
-            opacity: 0.95;
+            opacity: 0.9;
         }
 
         .transformations-gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
             margin-bottom: 30px;
         }
 
         .gallery-item {
             background: rgba(255, 255, 255, 0.08);
-            aspect-ratio: 4/3;
+            aspect-ratio: 1/1;
             border-radius: 8px;
             overflow: hidden;
             backdrop-filter: blur(10px);
@@ -484,9 +318,10 @@
 
         /* ===== PROCEDIMENTOS SECTION ===== */
         .procedures {
-            background: linear-gradient(135deg, var(--secondary-blue) 0%, var(--primary-blue) 100%);
-            padding: 50px 20px;
+            background: linear-gradient(135deg, var(--dark-black) 0%, var(--luxury-black) 50%, var(--very-dark-blue) 100%);
+            padding: 60px 20px;
             color: var(--white);
+            border-top: 2px solid var(--gold);
         }
 
         .procedures-content {
@@ -496,24 +331,27 @@
 
         .procedures h2 {
             text-align: center;
-            font-size: 28px;
-            font-weight: 400;
-            letter-spacing: 1px;
+            font-size: 36px;
+            font-weight: 600;
+            letter-spacing: 2px;
             margin-bottom: 40px;
             text-transform: uppercase;
             padding-bottom: 20px;
-            border-bottom: 3px solid rgba(255, 255, 255, 0.25);
+            border-bottom: 3px solid var(--gold);
+            background: linear-gradient(135deg, var(--light-gold) 0%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .procedures-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
             gap: 25px;
-            margin-bottom: 30px;
         }
 
         .procedure-card {
-            background: rgba(255, 255, 255, 0.07);
+            background: linear-gradient(135deg, rgba(0,0,0,0.4), rgba(212,175,55,0.05));
             padding: 25px;
             border-radius: 8px;
             border-left: 4px solid rgba(255, 255, 255, 0.25);
@@ -522,7 +360,21 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
+            animation: slideUp 0.6s ease forwards;
         }
+
+        .procedure-card:nth-child(1) { animation-delay: 0.05s; }
+        .procedure-card:nth-child(2) { animation-delay: 0.1s; }
+        .procedure-card:nth-child(3) { animation-delay: 0.15s; }
+        .procedure-card:nth-child(4) { animation-delay: 0.2s; }
+        .procedure-card:nth-child(5) { animation-delay: 0.25s; }
+        .procedure-card:nth-child(6) { animation-delay: 0.3s; }
+        .procedure-card:nth-child(7) { animation-delay: 0.35s; }
+        .procedure-card:nth-child(8) { animation-delay: 0.4s; }
+        .procedure-card:nth-child(9) { animation-delay: 0.45s; }
+        .procedure-card:nth-child(10) { animation-delay: 0.5s; }
+        .procedure-card:nth-child(11) { animation-delay: 0.55s; }
+        .procedure-card:nth-child(12) { animation-delay: 0.6s; }
 
         .procedure-card:hover {
             background: rgba(255, 255, 255, 0.12);
@@ -546,7 +398,6 @@
             height: 140px;
             background: rgba(255, 255, 255, 0.04);
             border-radius: 4px;
-            margin-bottom: 0;
             overflow: hidden;
             flex-grow: 1;
         }
@@ -570,10 +421,12 @@
 
         /* ===== WHATSAPP CTA ===== */
         .whatsapp-cta {
-            background: var(--primary-blue);
-            padding: 30px 20px;
+            background: linear-gradient(135deg, var(--dark-black) 0%, var(--primary-blue) 100%);
+            padding: 40px 20px;
             text-align: center;
             color: var(--white);
+            border-top: 2px solid var(--gold);
+            border-bottom: 2px solid var(--gold);
         }
 
         .whatsapp-container {
@@ -615,6 +468,705 @@
         .whatsapp-button:hover {
             background: #1ead50;
             transform: scale(1.05);
+        }
+
+        /* ===== PRODUTOS SECTION ===== */
+        .produtos-section {
+            background: linear-gradient(135deg, var(--dark-black) 0%, var(--luxury-black) 50%, var(--primary-blue) 100%);
+            padding: 60px 20px; border-top: 2px solid var(--gold);
+            color: var(--white);
+        }
+
+        .produtos-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .produtos-title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .produtos-subtitle {
+            text-align: center;
+            font-size: 15px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .produtos-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .produto-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .produto-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .produto-image {
+            width: 100%;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 13px;
+            overflow: hidden;
+        }
+
+        .produto-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .produto-image .placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .produto-info {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .produto-nome {
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .produto-descricao {
+            font-size: 13px;
+            opacity: 0.85;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .produto-button {
+            background: linear-gradient(135deg, #e8d4a8 0%, #d4af37 50%, #c9a961 100%);
+            color: #333333;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 12px;
+            transition: all 0.3s ease;
+            border: 1px solid #c9a961;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            display: inline-block;
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+            text-align: center;
+        }
+
+        .produto-button:hover {
+            background: linear-gradient(135deg, #f0deb8 0%, #e8d4a8 50%, #d4af37 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(212, 175, 55, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+        }
+
+        /* ===== MODALS DOS CURSOS ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.9) 0%, rgba(26, 26, 26, 0.95) 100%);
+            animation: fadeIn 0.4s ease;
+            overflow-y: auto;
+            backdrop-filter: blur(8px);
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, var(--dark-black) 0%, var(--luxury-black) 30%, var(--primary-blue) 80%, var(--secondary-blue) 100%);
+            margin: 3% auto;
+            padding: 0;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 950px;
+            color: var(--white);
+            box-shadow: 
+                0 30px 80px rgba(0, 0, 0, 0.7),
+                0 0 80px rgba(212, 175, 55, 0.3),
+                0 0 40px rgba(44, 90, 160, 0.4),
+                inset 0 1px 0 rgba(212, 175, 55, 0.2);
+            animation: slideDown 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            max-height: 85vh;
+            overflow-y: auto;
+            border: 2px solid var(--gold);
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .modal-content::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .modal-content::-webkit-scrollbar-track {
+            background: rgba(212, 175, 55, 0.05);
+            border-radius: 10px;
+        }
+
+        .modal-content::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--gold) 0%, var(--light-gold) 100%);
+            border-radius: 10px;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .modal-content::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, var(--light-gold) 0%, var(--gold) 100%);
+        }
+
+        .modal-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: linear-gradient(180deg, rgba(212, 175, 55, 0.2) 0%, transparent 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .modal-content::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(180deg, transparent 0%, rgba(44, 90, 160, 0.2) 100%);
+            pointer-events: none;
+        }
+
+        .modal-image-header {
+            position: relative;
+            z-index: 5;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .modal-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            position: relative;
+            z-index: 5;
+        }
+
+        .modal-header {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 0;
+            padding: 50px 40px 30px;
+            background: linear-gradient(135deg, rgba(44, 90, 160, 0.3) 0%, rgba(74, 123, 167, 0.2) 100%);
+            border-bottom: 2px solid rgba(212, 175, 55, 0.4);
+            text-align: center;
+        }
+
+        .modal-content h2 {
+            font-size: 48px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin: 0 0 20px 0;
+            font-family: 'Playfair Display', serif;
+            color: #fff;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(135deg, #ffffff 0%, #e8d4a8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .modal-subtitle {
+            font-size: 16px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            opacity: 0.85;
+            font-style: italic;
+            margin: 0;
+            color: rgba(232, 212, 168, 0.8);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .modal-close {
+            color: rgba(232, 212, 168, 0.9);
+            position: absolute;
+            right: 35px;
+            top: 30px;
+            font-size: 36px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(44, 90, 160, 0.3);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            z-index: 10;
+        }
+
+        .modal-close:hover {
+            color: var(--whatsapp-green);
+            background: rgba(37, 211, 102, 0.15);
+            border-color: rgba(37, 211, 102, 0.6);
+            transform: rotate(90deg) scale(1.1);
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.3);
+        }
+
+        .modal-header-layout {
+            display: flex;
+            gap: 25px;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            padding: 0 40px;
+            padding-top: 20px;
+        }
+
+        .modal-image-small {
+            flex-shrink: 0;
+            width: 250px;
+            height: 280px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .modal-image-small img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-header-info {
+            flex: 1;
+            padding-top: 10px;
+        }
+
+        .modal-header-info h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--white);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .info-card {
+            background: rgba(212, 175, 55, 0.08);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid var(--gold);
+            backdrop-filter: blur(10px);
+        }
+
+        .info-card h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-card p {
+            font-size: 14px;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        .price-label {
+            font-size: 14px;
+            color: var(--gold);
+            margin-right: 5px;
+        }
+
+        .price-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .price-note {
+            font-size: 12px;
+            margin-top: 8px;
+            opacity: 0.8;
+            font-style: italic;
+        }
+
+        .modal-tabs {
+            display: flex;
+            gap: 10px;
+            margin: 30px 40px 0 40px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+            flex-wrap: wrap;
+        }
+
+        .tab-button {
+            background: transparent;
+            color: rgba(255, 255, 255, 0.6);
+            border: none;
+            padding: 15px 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .tab-button:hover {
+            color: var(--gold);
+        }
+
+        .tab-button.active {
+            color: var(--gold);
+            border-bottom-color: var(--gold);
+        }
+
+        .tab-content {
+            display: none;
+            padding: 0 40px 30px 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .pagamento-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0 25px 0;
+        }
+
+        .pagamento-opcao {
+            background: rgba(212, 175, 55, 0.08);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .pagamento-opcao:hover {
+            background: rgba(212, 175, 55, 0.15);
+            border-color: var(--gold);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .pagamento-opcao h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--gold);
+        }
+
+        .opcao-preco {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 5px;
+        }
+
+        .opcao-desc {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .pagamento-nota {
+            background: rgba(212, 175, 55, 0.05);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid var(--gold);
+            font-size: 13px;
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+
+        .objetivo-texto {
+            line-height: 1.8;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .modal-section-title {
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin: 30px 40px 20px 40px;
+            padding-bottom: 12px;
+            position: relative;
+            z-index: 2;
+            font-family: 'Playfair Display', serif;
+            color: var(--gold);
+        }
+
+        .modal-section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold) 0%, transparent 100%);
+            border-radius: 2px;
+        }
+
+        .conteudo-lista {
+            list-style: none;
+            margin: 0 40px 30px 40px;
+            padding: 25px;
+            position: relative;
+            z-index: 2;
+            background: rgba(212, 175, 55, 0.08);
+            border-radius: 10px;
+            border-left: 4px solid var(--gold);
+            backdrop-filter: blur(10px);
+        }
+
+        .conteudo-lista li {
+            font-size: 14px;
+            line-height: 2.2;
+            opacity: 0.95;
+            padding-left: 0;
+            margin-bottom: 0;
+            font-weight: 300;
+            letter-spacing: 0.3px;
+            position: relative;
+        }
+
+        .conteudo-lista li::before {
+            content: '✓';
+            color: var(--whatsapp-green);
+            font-weight: bold;
+            margin-right: 12px;
+        }
+
+        .modal-button-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--light-gold) 50%, var(--primary-blue) 100%);
+            color: var(--luxury-black);
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 
+                0 15px 40px rgba(212, 175, 55, 0.4),
+                0 0 20px rgba(212, 175, 55, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            border: 2px solid var(--gold);
+            cursor: pointer;
+            width: auto;
+            margin: 40px 50px 50px 50px;
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
+        }
+
+        .modal-button-whatsapp::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .modal-button-whatsapp:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .modal-button-whatsapp:hover {
+            transform: translateY(-5px);
+            box-shadow: 
+                0 25px 50px rgba(37, 211, 102, 0.5),
+                0 0 30px rgba(37, 211, 102, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+            background: linear-gradient(135deg, #1ead50 0%, #15a844 50%, #0d7a2f 100%);
+        }
+
+        .modal-button-whatsapp i {
+            font-size: 18px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .modal-button-whatsapp span {
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100px) scale(0.95);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* ===== DETALHES DOS CURSOS ===== */
+        .curso-detalhes-section {
+            background: linear-gradient(135deg, var(--dark-black) 0%, var(--luxury-black) 50%, var(--primary-blue) 100%);
+            padding: 60px 20px; border-top: 2px solid var(--gold);
+            color: var(--white);
+        }
+
+        .curso-detalhes-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .curso-detalhes-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .curso-detalhes-header h2 {
+            font-size: 36px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .curso-datas {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+
+        .curso-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .curso-modulo {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            border-left: 4px solid var(--whatsapp-green);
+        }
+
+        .curso-modulo h3 {
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .curso-conteudo {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .curso-conteudo h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .conteudo-lista {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .conteudo-lista li {
+            font-size: 14px;
+            line-height: 1.9;
+            opacity: 0.9;
+            padding-bottom: 10px;
+        }
+
+        .curso-contato {
+            text-align: center;
+            font-size: 16px;
+            font-weight: 500;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         /* ===== DRA WENDREA SECTION ===== */
@@ -692,7 +1244,6 @@
             font-size: 13px;
             line-height: 1.8;
             opacity: 0.9;
-            margin-bottom: 15px;
         }
 
         .dra-image-container {
@@ -717,11 +1268,268 @@
             font-size: 14px;
         }
 
-        /* ===== FOOTER / CONTATO ===== */
+        /* ===== ESPECIALISTA SECTION ===== */
+        .especialista-section {
+            background: linear-gradient(135deg, var(--dark-black) 0%, var(--luxury-black) 50%, var(--primary-blue) 100%);
+            padding: 60px 20px;
+            color: var(--white);
+            border-top: 2px solid var(--gold);
+        }
+
+        .especialista-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .especialista-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .cursos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .curso-card {
+            background: linear-gradient(135deg, var(--dark-black) 0%, #1a1a2e 100%);
+            border-radius: 0;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            border: none;
+        }
+
+        .curso-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(212, 175, 55, 0.3);
+        }
+
+        .curso-image {
+            width: 100%;
+            height: 280px;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 13px;
+            overflow: hidden;
+            border-radius: 0;
+        }
+
+        .curso-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+            padding: 0;
+            border-radius: 0;
+            border: none;
+        }
+
+        .curso-card:hover .curso-image img {
+            transform: scale(1.05);
+        }
+
+        .curso-info {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            padding: 25px;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-top: none;
+            margin-top: 0;
+        }
+
+        .curso-nome {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .curso-button {
+            background: linear-gradient(135deg, #e8d4a8 0%, #d4af37 50%, #c9a961 100%);
+            color: #333333;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 12px;
+            transition: all 0.3s ease;
+            border: 1px solid #c9a961;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            display: inline-block;
+            margin-top: 10px;
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+        }
+
+        .curso-button:hover {
+            background: linear-gradient(135deg, #f0deb8 0%, #e8d4a8 50%, #d4af37 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(212, 175, 55, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+        }
+
+        /* ===== AVALIAÇÕES SECTION ===== */
+        .avaliacoes-section {
+            background: linear-gradient(135deg, var(--dark-black) 0%, var(--luxury-black) 50%, var(--primary-blue) 100%);
+            padding: 60px 20px; border-top: 2px solid var(--gold);
+            color: var(--white);
+        }
+
+        .avaliacoes-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .avaliacoes-title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .avaliacoes-carousel {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .avaliacoes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        .avaliacao-card {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid var(--gold);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        .avaliacao-card:nth-child(1),
+        .avaliacao-card:nth-child(2),
+        .avaliacao-card:nth-child(3) {
+            display: block;
+        }
+
+        .avaliacao-card:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .avaliacao-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 12px;
+        }
+
+        .avaliacao-nome {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            color: var(--white);
+        }
+
+        .avaliacao-stars {
+            color: var(--gold);
+            font-size: 13px;
+            letter-spacing: 2px;
+        }
+
+        .avaliacao-texto {
+            font-size: 13px;
+            line-height: 1.7;
+            opacity: 0.9;
+        }
+
+        .avaliacao-data {
+            font-size: 11px;
+            opacity: 0.6;
+            margin-top: 12px;
+        }
+
+        .carousel-dots-avaliacoes {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .dot-avaliacao {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid var(--gold);
+        }
+
+        .dot-avaliacao.active {
+            background: var(--gold);
+            transform: scale(1.2);
+        }
+
+        .dot-avaliacao:hover {
+            background: var(--gold);
+        }
+
+        .google-logo {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .google-logo-text {
+            font-size: 12px;
+            opacity: 0.7;
+            margin-bottom: 10px;
+        }
+
+        .google-rating {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 10px 0;
+        }
+
+        .google-stars {
+            color: var(--whatsapp-green);
+            font-size: 16px;
+            letter-spacing: 2px;
+        }
+
+        /* ===== FOOTER ===== */
         .footer {
-            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--very-dark-blue) 100%);
-            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--luxury-black) 0%, var(--dark-black) 50%, var(--very-dark-blue) 100%);
+            padding: 50px 20px;
             color: var(--light-gray);
+            border-top: 3px solid var(--gold);
         }
 
         .footer-content {
@@ -759,13 +1567,128 @@
 
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 20px;
+            padding: 30px 20px;
             text-align: center;
             font-size: 12px;
             opacity: 0.75;
         }
 
-        /* ===== ANIMAÇÕES ===== */
+        .footer-security {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .footer-security img {
+            height: 30px;
+            width: auto;
+            filter: brightness(0.9);
+        }
+
+        .footer-security span {
+            font-size: 11px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+
+        .footer-logo img {
+            height: 80px;
+            width: auto;
+            filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.3));
+        }
+
+        .footer-social-links {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer-logo-social {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 8px;
+        }
+
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--gold);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid var(--gold);
+        }
+
+        .social-icon:hover {
+            background: var(--gold);
+            color: var(--luxury-black);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .social-icon i {
+            font-size: 20px;
+        }
+
+        .footer-horario-instagram {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            align-items: center;
+            text-align: center;
+        }
+
+        .footer-horario {
+            width: 100%;
+        }
+
+        .footer-instagram-button {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn-instagram {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--primary-blue) 100%);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-instagram:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.6), 0 0 20px rgba(44, 90, 160, 0.3);
+            background: linear-gradient(135deg, var(--light-gold) 0%, var(--secondary-blue) 100%);
+        }
+
         @keyframes fadeInDown {
             from {
                 opacity: 0;
@@ -788,23 +1711,6 @@
             }
         }
 
-        .procedure-card {
-            animation: slideUp 0.6s ease forwards;
-        }
-
-        .procedure-card:nth-child(1) { animation-delay: 0.05s; }
-        .procedure-card:nth-child(2) { animation-delay: 0.1s; }
-        .procedure-card:nth-child(3) { animation-delay: 0.15s; }
-        .procedure-card:nth-child(4) { animation-delay: 0.2s; }
-        .procedure-card:nth-child(5) { animation-delay: 0.25s; }
-        .procedure-card:nth-child(6) { animation-delay: 0.3s; }
-        .procedure-card:nth-child(7) { animation-delay: 0.35s; }
-        .procedure-card:nth-child(8) { animation-delay: 0.4s; }
-        .procedure-card:nth-child(9) { animation-delay: 0.45s; }
-        .procedure-card:nth-child(10) { animation-delay: 0.5s; }
-        .procedure-card:nth-child(11) { animation-delay: 0.55s; }
-        .procedure-card:nth-child(12) { animation-delay: 0.6s; }
-
         /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             nav {
@@ -816,6 +1722,15 @@
                 padding: 8px 15px;
                 font-size: 10px;
                 margin-left: 10px;
+            }
+
+            .hero {
+                min-height: 400px;
+            }
+
+            .hero-text {
+                padding: 40px 20px;
+                max-width: 100%;
             }
 
             .hero h1 {
@@ -867,6 +1782,10 @@
             }
 
             .avaliacoes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .produtos-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -933,33 +1852,29 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="logo.png" alt="Logo Clínica Burgarelli">
-                <!-- Substitua logo.png por sua logo -->
+                <img src="Fotos/logo.png" alt="Logo Clínica Burgarelli">
             </div>
             <nav>
                 <a href="#sobre">Sobre</a>
                 <a href="#servicos">Serviços</a>
+                <a href="#produtos">Produtos</a>
+                <a href="#cursos">Cursos</a>
                 <a href="#contato">Contato</a>
-                <a href="https://wa.me/seu-numero-aqui" class="nav-cta-button">Agende sua avaliação gratuita</a>
+                <a href="https://wa.me/5527988262007" class="nav-cta-button">Agende sua avaliação gratuita</a>
             </nav>
         </div>
     </header>
 
-    <!-- HERO PRINCIPAL -->
+    <!-- HERO PRINCIPAL COM IMAGEM -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>Realce a sua<br>beleza natural<br>com a ciência</h1>
-            <p>Do rejuvenescimento facial aos tratamentos corporais — uma linha completa com resultados comprovados.</p>
+        <div class="hero-image-side">
+            <img src="Fotos/principal.jpg" alt="Imagem Principal" style="width: 100%; height: 100%; object-fit: cover; display: block;">
         </div>
-    </section>
-
-    <!-- HERO IMAGE -->
-    <section class="hero-image">
-        <div class="hero-image-container">
-            <div class="placeholder">
-                [Imagem Principal - Substitua por sua foto]
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Realce a sua<br>beleza natural<br>com a ciência</h1>
+                <p>Do rejuvenescimento facial aos tratamentos corporais — uma linha completa com resultados comprovados.</p>
             </div>
-            <!-- Substitua a linha acima por: <img src="sua-imagem.jpg" alt="Tratamento"> -->
         </div>
     </section>
 
@@ -970,20 +1885,57 @@
             <p>Do rejuvenescimento facial aos tratamentos corporais — uma linha completa com resultados comprovados.</p>
             <div class="transformations-gallery">
                 <div class="gallery-item">
-                    <div class="placeholder">[Imagem 1]</div>
-                    <!-- Substitua por: <img src="imagem1.jpg" alt="Transformação 1"> -->
+                    <img src="Fotos/transformacao1.jpg" alt="Transformação 1">
                 </div>
                 <div class="gallery-item">
-                    <div class="placeholder">[Imagem 2]</div>
-                    <!-- Substitua por: <img src="imagem2.jpg" alt="Transformação 2"> -->
+                    <img src="Fotos/transformacao2.jpg" alt="Transformação 2">
                 </div>
                 <div class="gallery-item">
-                    <div class="placeholder">[Imagem 3]</div>
-                    <!-- Substitua por: <img src="imagem3.jpg" alt="Transformação 3"> -->
+                    <img src="Fotos/transformacao3.jpg" alt="Transformação 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="Fotos/transformacao4.jpg" alt="Transformação 4">
+                </div>
+                <div class="gallery-item">
+                    <img src="Fotos/transformacao5.jpg" alt="Transformação 5">
+                </div>
+                <div class="gallery-item">
+                    <img src="Fotos/transformacao6.jpg" alt="Transformação 6">
+                </div>
+                <div class="gallery-item">
+                    <img src="Fotos/transformacao7.jpg" alt="Transformação 7">
+                </div>
+                <div class="gallery-item">
+                    <img src="Fotos/transformacao8.jpg" alt="Transformação 8">
+                </div>
+                <div class="gallery-item">
+                    <img src="Fotos/transformacao9.jpg" alt="Transformação 9">
+                </div>
+                <div class="gallery-item">
+                    <img src="Fotos/transformacao10.jpg" alt="Transformação 10">
+                </div>
+                <div class="gallery-item">
+                    <img src="Fotos/transformacao11.jpg" alt="Transformação 11">
+                </div>
+                <div class="gallery-item">
+                    <img src="Fotos/transformacao12.jpg" alt="Transformação 12">
+                </div>
+                <div class="gallery-item">
+                    <img src="Fotos/transformacao13.jpg" alt="Transformação 13">
+                </div>
+                <div class="gallery-item">
+                    <img src="Fotos/transformacao14.jpg" alt="Transformação 14">
+                </div>
+                <div class="gallery-item">
+                    <img src="Fotos/transformacao15.jpg" alt="Transformação 15">
+                </div>
+                <div class="gallery-item">
+                    <img src="Fotos/transformacao16.jpg" alt="Transformação 16">
                 </div>
             </div>
             <div class="carousel-dots">
                 <div class="dot active"></div>
+                <div class="dot"></div>
                 <div class="dot"></div>
                 <div class="dot"></div>
             </div>
@@ -991,95 +1943,89 @@
     </section>
 
     <!-- PROCEDIMENTOS -->
-    <section class="procedures">
+    <section class="procedures" id="servicos">
         <div class="procedures-content">
             <h2>Procedimentos</h2>
             <div class="procedures-grid">
-                
                 <div class="procedure-card">
                     <h3>Botox</h3>
                     <div class="procedure-image">
-                        <div class="placeholder">[Botox]</div>
+                        <img src="Fotos/Botox.jpg" alt="Botox">
                     </div>
                 </div>
-
                 <div class="procedure-card">
                     <h3>Armonização Facial</h3>
                     <div class="procedure-image">
-                        <div class="placeholder">[Harmonização]</div>
+                        <img src="Fotos/harmonização.jpg" alt="Harmonização">
                     </div>
                 </div>
-
                 <div class="procedure-card">
                     <h3>Celulite</h3>
                     <div class="procedure-image">
-                        <div class="placeholder">[Celulite]</div>
+                        <img src="Fotos/celulite.jpg" alt="Celulite">
                     </div>
                 </div>
-
                 <div class="procedure-card">
                     <h3>Bioestimulador de Colágeno</h3>
                     <div class="procedure-image">
-                        <div class="placeholder">[Colágeno]</div>
+                        <img src="Fotos/Colágeno.jpg" alt="Colágeno">
                     </div>
                 </div>
-
                 <div class="procedure-card">
                     <h3>Preenchimento Labial</h3>
                     <div class="procedure-image">
-                        <div class="placeholder">[Labial]</div>
+                        <img src="Fotos/preenchimento-labial.jpg" alt="Preenchimento Labial">
                     </div>
                 </div>
 
                 <div class="procedure-card">
                     <h3>Preenchimento Facial</h3>
                     <div class="procedure-image">
-                        <div class="placeholder">[Facial]</div>
+                        <img src="Fotos/preenchimento-facial.jpg" alt="Preenchimento Facial">
                     </div>
                 </div>
 
                 <div class="procedure-card">
                     <h3>Lipoenzima de Papada</h3>
                     <div class="procedure-image">
-                        <div class="placeholder">[Papada]</div>
+                        <img src="Fotos/Lipoenzima-de-papada.jpg" alt="Lipoenzima de Papada">
                     </div>
                 </div>
 
                 <div class="procedure-card">
                     <h3>Lipoenzima de Gordura</h3>
                     <div class="procedure-image">
-                        <div class="placeholder">[Gordura]</div>
+                        <img src="Fotos/Lipoenzima-de-gordura.jpg" alt="Lipoenzima de Gordura">
                     </div>
                 </div>
 
                 <div class="procedure-card">
                     <h3>Protocolo de Estrias</h3>
                     <div class="procedure-image">
-                        <div class="placeholder">[Estrias]</div>
+                        <img src="Fotos/protocolo-de-estrias.jpg" alt="Protocolo de Estrias">
                     </div>
                 </div>
 
                 <div class="procedure-card">
                     <h3>Microagulhamento</h3>
                     <div class="procedure-image">
-                        <div class="placeholder">[Microagulhamento]</div>
+                        <img src="Fotos/microagulhamento.jpg" alt="Microagulhamento">
                     </div>
                 </div>
 
                 <div class="procedure-card">
                     <h3>Limpeza de Pele</h3>
                     <div class="procedure-image">
-                        <div class="placeholder">[Limpeza]</div>
+                        <img src="Fotos/limpeza-de-pele.jpg" alt="Limpeza de Pele">
                     </div>
                 </div>
 
                 <div class="procedure-card">
                     <h3>Terápiacapilar</h3>
                     <div class="procedure-image">
-                        <div class="placeholder">[Capilar]</div>
+                        <img src="Fotos/terapiacapilar.jpg" alt="Terápiacapilar">
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -1089,7 +2035,49 @@
         <div class="whatsapp-container">
             <i class="fab fa-whatsapp whatsapp-icon"></i>
             <span class="whatsapp-text">Agende sua avaliação gratuitamente</span>
-            <a href="https://wa.me/seu-numero-aqui" class="whatsapp-button">Entrar em contato</a>
+            <a href="https://wa.me/5527988262007" class="whatsapp-button">Entrar em contato</a>
+        </div>
+    </section>
+
+    <!-- PRODUTOS SECTION -->
+    <section class="produtos-section" id="produtos">
+        <div class="produtos-content">
+            <h2 class="produtos-title">Nossos Produtos</h2>
+            <p class="produtos-subtitle">Conheça nossa linha completa de produtos para cuidados estéticos</p>
+            <div class="produtos-grid">
+                <div class="produto-card">
+                    <div class="produto-image">
+                        <div class="placeholder">[Imagem Produto 1]</div>
+                    </div>
+                    <div class="produto-info">
+                        <h3 class="produto-nome">Nome do Produto</h3>
+                        <p class="produto-descricao">Descrição breve do produto</p>
+                        <a href="#" class="produto-button">Ver Detalhes</a>
+                    </div>
+                </div>
+
+                <div class="produto-card">
+                    <div class="produto-image">
+                        <div class="placeholder">[Imagem Produto 2]</div>
+                    </div>
+                    <div class="produto-info">
+                        <h3 class="produto-nome">Nome do Produto</h3>
+                        <p class="produto-descricao">Descrição breve do produto</p>
+                        <a href="#" class="produto-button">Ver Detalhes</a>
+                    </div>
+                </div>
+
+                <div class="produto-card">
+                    <div class="produto-image">
+                        <div class="placeholder">[Imagem Produto 3]</div>
+                    </div>
+                    <div class="produto-info">
+                        <h3 class="produto-nome">Nome do Produto</h3>
+                        <p class="produto-descricao">Descrição breve do produto</p>
+                        <a href="#" class="produto-button">Ver Detalhes</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1099,119 +2087,530 @@
             <div class="dra-info">
                 <h2 class="dra-name">Dra. Wendrea Burgarelli</h2>
                 <p class="dra-crbm">CRBM 08391-ES</p>
-                
                 <ul class="dra-qualifications">
                     <li>Graduada em Biomedicina</li>
                     <li>Pós Graduada em Gestão de Clínicas</li>
                     <li>Especialista em Estética Avançada</li>
                     <li>Professora da Área de estética</li>
                 </ul>
-
                 <h3 class="dra-section-title">Descrição da Profissional</h3>
                 <p class="dra-description">
                     A Dra. Wendrea Burgarelli é uma profissional dedicada aos procedimentos estéticos de última geração. Com formação em Biomedicina e especialização em Estética Avançada, oferece tratamentos personalizados que realçam a beleza natural de seus pacientes.
                 </p>
             </div>
             <div class="dra-image-container">
-                <div class="placeholder">[Foto da Dra. Wendrea]</div>
-                <!-- Substitua por: <img src="dra-wendrea.jpg" alt="Dra. Wendrea Burgarelli"> -->
+                <img src="Fotos/dra-wendrea.jpg" alt="Dra. Wendrea Burgarelli">
             </div>
         </div>
     </section>
 
     <!-- ESPECIALISTA SECTION -->
-    <section class="especialista-section">
+    <section class="especialista-section" id="cursos">
         <div class="especialista-content">
             <h2 class="especialista-title">Torne-se um especialista na área!</h2>
             <div class="cursos-grid">
                 <div class="curso-card">
-                    <div class="curso-image">
-                        [Imagem Curso 1]
-                    </div>
+                    <div class="curso-image"><img src="Fotos/cursotoxinaboltulinica.jpg" alt="Toxina Botulínica"></div>
                     <div class="curso-info">
-                        <div>
-                            <h3 class="curso-nome">Nome do Curso</h3>
-                        </div>
-                        <a href="#" class="curso-button">Saiba mais</a>
+                        <h3 class="curso-nome">Curso Toxina Botulínica</h3>
+                        <button class="curso-button" onclick="openModal('modal-toxina')">Saiba mais</button>
                     </div>
                 </div>
-
                 <div class="curso-card">
-                    <div class="curso-image">
-                        [Imagem Curso 2]
-                    </div>
+                    <div class="curso-image"><img src="Fotos/cursointradermoterapia.jpg" alt="Intradermoterapia"></div>
                     <div class="curso-info">
-                        <div>
-                            <h3 class="curso-nome">Nome do Curso</h3>
-                        </div>
-                        <a href="#" class="curso-button">Saiba mais</a>
+                        <h3 class="curso-nome">Curso Intradermoterapia</h3>
+                        <button class="curso-button" onclick="openModal('modal-intradermo')">Saiba mais</button>
                     </div>
                 </div>
-
                 <div class="curso-card">
-                    <div class="curso-image">
-                        [Imagem Curso 3]
-                    </div>
+                    <div class="curso-image"><img src="Fotos/cursopeim.jpg" alt="PEIM"></div>
                     <div class="curso-info">
-                        <div>
-                            <h3 class="curso-nome">Nome do Curso</h3>
-                        </div>
-                        <a href="#" class="curso-button">Saiba mais</a>
+                        <h3 class="curso-nome">Curso PEIM</h3>
+                        <button class="curso-button" onclick="openModal('modal-peim')">Saiba mais</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- AVALIAÇÕES SECTION -->
+    <!-- MODALS DOS CURSOS -->
+    <!-- Modal Toxina Botulínica -->
+    <div id="modal-toxina" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('modal-toxina')">&times;</span>
+            
+            <div class="modal-header-layout">
+                <div class="modal-image-small">
+                    <img src="Fotos/cursotoxinaboltulinica.jpg" alt="Curso Toxina Botulínica">
+                </div>
+                <div class="modal-header-info">
+                    <h2>Toxina Botulínica</h2>
+                    <p class="modal-subtitle">Dominie a técnica com os melhores especialistas</p>
+                    <div class="modal-price">
+                        <span class="price-label">R$</span>
+                        <span class="price-value">1.299,00</span>
+                        <p class="price-note">*A taxa de matrícula já está incluída</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-tabs">
+                <button class="tab-button active" onclick="openTab(event, 'conteudo-toxina')">Conteúdo</button>
+                <button class="tab-button" onclick="openTab(event, 'info-toxina')">Informações</button>
+                <button class="tab-button" onclick="openTab(event, 'pagamento-toxina')">Pagamento</button>
+            </div>
+
+            <div id="conteudo-toxina" class="tab-content active">
+                <h3 class="modal-section-title">O que você vai aprender:</h3>
+                <ul class="conteudo-lista">
+                    <li>✓ Anatomofisiologia do sistema nervoso e muscular</li>
+                    <li>✓ Mecanismo de ação da toxina botulínica</li>
+                    <li>✓ Reconstituição: seca x molhada</li>
+                    <li>✓ Diversos modelos de marcações</li>
+                    <li>✓ Contraindicação</li>
+                    <li>✓ Intercorrências</li>
+                    <li>✓ Cuidados pós-procedimento</li>
+                    <li>✓ Bônus: técnica do peeling coreano</li>
+                    <li>✓ Prática (2ª dia de aula)</li>
+                    <li>✓ Apostila do conteúdo e certificado</li>
+                </ul>
+            </div>
+
+            <div id="info-toxina" class="tab-content">
+                <div class="info-cards">
+                    <div class="info-card">
+                        <h4>Público-alvo</h4>
+                        <p>Profissionais da saúde e da estética que desejam aprofundar conhecimentos sobre produtos cosméticos, suas funções e aplicações em tratamentos estéticos avançados.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>Duração</h4>
+                        <p><strong>Curso intensivo</strong> com aulas teóricas e práticas<br><strong>Modalidade:</strong> Presencial</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="pagamento-toxina" class="tab-content">
+                <h3 class="modal-section-title">Opções de Pagamento:</h3>
+                <div class="pagamento-info">
+                    <div class="pagamento-opcao">
+                        <h4>À Vista</h4>
+                        <p class="opcao-preco">R$ 1.299,00</p>
+                        <p class="opcao-desc">Desconto de 10%: R$ 1.169,10</p>
+                    </div>
+                    <div class="pagamento-opcao">
+                        <h4>Parcelado</h4>
+                        <p class="opcao-preco">3x de R$ 433,00</p>
+                        <p class="opcao-desc">Sem juros</p>
+                    </div>
+                    <div class="pagamento-opcao">
+                        <h4>Boleto Bancário</h4>
+                        <p class="opcao-preco">R$ 1.299,00</p>
+                        <p class="opcao-desc">Válido por 3 dias úteis</p>
+                    </div>
+                </div>
+                <p class="pagamento-nota">Após confirmação do pagamento, você receberá o link de acesso ao curso e cronograma das aulas presenciais.</p>
+            </div>
+
+            <a href="https://wa.me/5527988262007" class="modal-button-whatsapp" target="_blank">
+                <span>💬 Agendar agora no WhatsApp</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Modal Intradermoterapia -->
+    <div id="modal-intradermo" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('modal-intradermo')">&times;</span>
+            
+            <div class="modal-header-layout">
+                <div class="modal-image-small">
+                    <img src="Fotos/cursointradermoterapia.jpg" alt="Curso Intradermoterapia">
+                </div>
+                <div class="modal-header-info">
+                    <h2>Intradermoterapia</h2>
+                    <p class="modal-subtitle">Aprenda técnicas avançadas de rejuvenescimento</p>
+                    <div class="modal-price">
+                        <span class="price-label">R$</span>
+                        <span class="price-value">1.299,00</span>
+                        <p class="price-note">*A taxa de matrícula já está incluída</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-tabs">
+                <button class="tab-button active" onclick="openTab(event, 'conteudo-intradermo')">Conteúdo</button>
+                <button class="tab-button" onclick="openTab(event, 'info-intradermo')">Informações</button>
+                <button class="tab-button" onclick="openTab(event, 'pagamento-intradermo')">Pagamento</button>
+            </div>
+
+            <div id="conteudo-intradermo" class="tab-content active">
+                <h3 class="modal-section-title">O que você vai aprender:</h3>
+                <ul class="conteudo-lista">
+                    <li>✓ Fundamentos da intradermoterapia</li>
+                    <li>✓ Anatomia e fisiologia da pele aplicada à intradermoterapia</li>
+                    <li>✓ Exames laboratoriais</li>
+                    <li>✓ Protocolo de peeling esfoliativo (gordura localizada)</li>
+                    <li>✓ Protocolo para ganho de massa muscular</li>
+                    <li>✓ Protocolo para estrias</li>
+                    <li>✓ Protocolo para celulite</li>
+                    <li>✓ Contraindicações</li>
+                    <li>✓ Intercorrências e consultas clínicas</li>
+                    <li>✓ Cuidados pré e pós-procedimento</li>
+                    <li>✓ Prática</li>
+                    <li>✓ Apostila do conteúdo e certificado</li>
+                </ul>
+            </div>
+
+            <div id="info-intradermo" class="tab-content">
+                <div class="info-cards">
+                    <div class="info-card">
+                        <h4>Público-alvo</h4>
+                        <p>Profissionais da saúde e da estética que desejam aprofundar conhecimentos sobre produtos cosméticos, suas funções e aplicações em tratamentos estéticos avançados.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>Duração</h4>
+                        <p><strong>Curso intensivo</strong> com aulas teóricas e práticas<br><strong>Modalidade:</strong> Presencial</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="pagamento-intradermo" class="tab-content">
+                <h3 class="modal-section-title">Opções de Pagamento:</h3>
+                <div class="pagamento-info">
+                    <div class="pagamento-opcao">
+                        <h4>À Vista</h4>
+                        <p class="opcao-preco">R$ 1.299,00</p>
+                        <p class="opcao-desc">Desconto de 10%: R$ 1.169,10</p>
+                    </div>
+                    <div class="pagamento-opcao">
+                        <h4>Parcelado</h4>
+                        <p class="opcao-preco">3x de R$ 433,00</p>
+                        <p class="opcao-desc">Sem juros</p>
+                    </div>
+                    <div class="pagamento-opcao">
+                        <h4>Boleto Bancário</h4>
+                        <p class="opcao-preco">R$ 1.299,00</p>
+                        <p class="opcao-desc">Válido por 3 dias úteis</p>
+                    </div>
+                </div>
+                <p class="pagamento-nota">Após confirmação do pagamento, você receberá o link de acesso ao curso e cronograma das aulas presenciais.</p>
+            </div>
+
+            <a href="https://wa.me/5527988262007" class="modal-button-whatsapp" target="_blank">
+                <span>💬 Agendar agora no WhatsApp</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Modal PEIM -->
+    <div id="modal-peim" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('modal-peim')">&times;</span>
+            
+            <div class="modal-header-layout">
+                <div class="modal-image-small">
+                    <img src="Fotos/cursopeim.jpg" alt="Curso PEIM">
+                </div>
+                <div class="modal-header-info">
+                    <h2>PEIM</h2>
+                    <p class="modal-subtitle">Domine o PEIM e entregue resultados de qualidade</p>
+                    <div class="modal-price">
+                        <span class="price-label">R$</span>
+                        <span class="price-value">1.299,00</span>
+                        <p class="price-note">*A taxa de matrícula já está incluída</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-tabs">
+                <button class="tab-button active" onclick="openTab(event, 'conteudo-peim')">Conteúdo</button>
+                <button class="tab-button" onclick="openTab(event, 'info-peim')">Informações</button>
+                <button class="tab-button" onclick="openTab(event, 'pagamento-peim')">Pagamento</button>
+            </div>
+
+            <div id="conteudo-peim" class="tab-content active">
+                <h3 class="modal-section-title">O que você vai aprender:</h3>
+                <ul class="conteudo-lista">
+                    <li>✓ Anatomia, fisiologia e histologia do sistema cardiovascular</li>
+                    <li>✓ Diferença das artérias e veias</li>
+                    <li>✓ Escleroterapia</li>
+                    <li>✓ Soluções esclerosantes na aplicação clínica</li>
+                    <li>✓ Contraindicação</li>
+                    <li>✓ Intercorrências</li>
+                    <li>✓ Cuidados pós-procedimento</li>
+                    <li>✓ Exames laboratoriais para PEIM</li>
+                    <li>✓ Prática</li>
+                    <li>✓ Apostila do conteúdo e certificado</li>
+                </ul>
+            </div>
+
+            <div id="info-peim" class="tab-content">
+                <div class="info-cards">
+                    <div class="info-card">
+                        <h4>Público-alvo</h4>
+                        <p>Profissionais da saúde e da estética que desejam aprofundar conhecimentos sobre produtos cosméticos, suas funções e aplicações em tratamentos estéticos avançados.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>Duração</h4>
+                        <p><strong>Curso intensivo</strong> com aulas teóricas e práticas<br><strong>Modalidade:</strong> Presencial</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="pagamento-peim" class="tab-content">
+                <h3 class="modal-section-title">Opções de Pagamento:</h3>
+                <div class="pagamento-info">
+                    <div class="pagamento-opcao">
+                        <h4>À Vista</h4>
+                        <p class="opcao-preco">R$ 1.299,00</p>
+                        <p class="opcao-desc">Desconto de 10%: R$ 1.169,10</p>
+                    </div>
+                    <div class="pagamento-opcao">
+                        <h4>Parcelado</h4>
+                        <p class="opcao-preco">3x de R$ 433,00</p>
+                        <p class="opcao-desc">Sem juros</p>
+                    </div>
+                    <div class="pagamento-opcao">
+                        <h4>Boleto Bancário</h4>
+                        <p class="opcao-preco">R$ 1.299,00</p>
+                        <p class="opcao-desc">Válido por 3 dias úteis</p>
+                    </div>
+                </div>
+                <p class="pagamento-nota">Após confirmação do pagamento, você receberá o link de acesso ao curso e cronograma das aulas presenciais.</p>
+            </div>
+
+            <a href="https://wa.me/5527988262007" class="modal-button-whatsapp" target="_blank">
+                <span>💬 Agendar agora no WhatsApp</span>
+            </a>
+        </div>
+    </div>
     <section class="avaliacoes-section">
         <div class="avaliacoes-content">
             <h2 class="avaliacoes-title">Somos uma clínica referência no google</h2>
-            
             <div style="text-align: center; margin-bottom: 40px;">
-                <img src="google-logo.png" alt="Google" style="height: 50px; width: auto; opacity: 0.9;">
+                <img src="Fotos/google-logo.png" alt="Google" style="height: 50px; width: auto; opacity: 0.9;">
             </div>
-
-            <div class="avaliacoes-grid">
-                <div class="avaliacao-card">
-                    <div class="avaliacao-header">
-                        <span class="avaliacao-nome">Cliente Nome</span>
-                        <span class="avaliacao-stars">★★★★★</span>
+            <div class="avaliacoes-carousel">
+                <div class="avaliacoes-grid" id="avaliacoesCarousel">
+                    <div class="avaliacao-card">
+                        <div class="avaliacao-header">
+                            <span class="avaliacao-nome">Renata Nascimento</span>
+                            <span class="avaliacao-stars">★★★★★</span>
+                        </div>
+                        <p class="avaliacao-texto">"Fiz aplicação de Botox e os resultados foram incríveis! Muito natural e rejuvenescedor. Dra. Wendrea é excelente!"</p>
+                        <div class="avaliacao-data">2 semanas atrás</div>
                     </div>
-                    <p class="avaliacao-texto">
-                        "Excelente atendimento e resultados incríveis! A Dra. Wendrea é muito atenciosa e profissional. Recomendo!"
-                    </p>
-                    <div class="avaliacao-data">Há 2 semanas</div>
+                    <div class="avaliacao-card">
+                        <div class="avaliacao-header">
+                            <span class="avaliacao-nome">Wellington Polinario</span>
+                            <span class="avaliacao-stars">★★★★★</span>
+                        </div>
+                        <p class="avaliacao-texto">"Super recomendo! Realizei preenchimento facial e ficou perfeito. Atendimento de alto nível, extremamente profissional e atencioso."</p>
+                        <div class="avaliacao-data">3 semanas atrás</div>
+                    </div>
+                    <div class="avaliacao-card">
+                        <div class="avaliacao-header">
+                            <span class="avaliacao-nome">Juliana Costa</span>
+                            <span class="avaliacao-stars">★★★★★</span>
+                        </div>
+                        <p class="avaliacao-texto">"Fiz harmonização facial e estou apaixonada com os resultados! A Dra. tem muito talento e experiência."</p>
+                        <div class="avaliacao-data">1 semana atrás</div>
+                    </div>
+                    <div class="avaliacao-card">
+                        <div class="avaliacao-header">
+                            <span class="avaliacao-nome">Mariana Silva</span>
+                            <span class="avaliacao-stars">★★★★★</span>
+                        </div>
+                        <p class="avaliacao-texto">"Fiz microagulhamento para melhorar minha pele e os resultados foram incríveis! Muito profissional!"</p>
+                        <div class="avaliacao-data">4 dias atrás</div>
+                    </div>
+                    <div class="avaliacao-card">
+                        <div class="avaliacao-header">
+                            <span class="avaliacao-nome">Patricia Gomes</span>
+                            <span class="avaliacao-stars">★★★★★</span>
+                        </div>
+                        <p class="avaliacao-texto">"Realizei tratamento para celulite e colágeno. Os resultados superaram minhas expectativas! Super recomendo!"</p>
+                        <div class="avaliacao-data">5 dias atrás</div>
+                    </div>
+                    <div class="avaliacao-card">
+                        <div class="avaliacao-header">
+                            <span class="avaliacao-nome">Fernanda Oliveira</span>
+                            <span class="avaliacao-stars">★★★★★</span>
+                        </div>
+                        <p class="avaliacao-texto">"Fiz limpeza de pele profunda e minha pele ficou radiante! Dra. Wendrea é muito cuidadosa e atenciosa."</p>
+                        <div class="avaliacao-data">1 semana atrás</div>
+                    </div>
+                    <div class="avaliacao-card">
+                        <div class="avaliacao-header">
+                            <span class="avaliacao-nome">Beatriz Santos</span>
+                            <span class="avaliacao-stars">★★★★★</span>
+                        </div>
+                        <p class="avaliacao-texto">"Preenchimento labial perfeito! Ficou natural e bonito. A Dra. tem precisão e sensibilidade no trabalho."</p>
+                        <div class="avaliacao-data">3 dias atrás</div>
+                    </div>
+                    <div class="avaliacao-card">
+                        <div class="avaliacao-header">
+                            <span class="avaliacao-nome">Camila Rocha</span>
+                            <span class="avaliacao-stars">★★★★★</span>
+                        </div>
+                        <p class="avaliacao-texto">"Fiz protocolo para estrias e obtive ótimos resultados! Clínica moderna e equipe muito atenciosa. Voltarei com certeza!"</p>
+                        <div class="avaliacao-data">6 dias atrás</div>
+                    </div>
+                    <div class="avaliacao-card">
+                        <div class="avaliacao-header">
+                            <span class="avaliacao-nome">Isadora Mendes</span>
+                            <span class="avaliacao-stars">★★★★★</span>
+                        </div>
+                        <p class="avaliacao-texto">"Realizei intradermoterapia e os resultados foram fantásticos! Minha pele ficou muito mais firme e radiante. Muito satisfeita!"</p>
+                        <div class="avaliacao-data">4 dias atrás</div>
+                    </div>
+                    <div class="avaliacao-card">
+                        <div class="avaliacao-header">
+                            <span class="avaliacao-nome">Rafael Costa</span>
+                            <span class="avaliacao-stars">★★★★★</span>
+                        </div>
+                        <p class="avaliacao-texto">"Ótima experiência! Fiz tratamento com PEIM e os resultados superaram expectativas. Dra. Wendrea é impecável!"</p>
+                        <div class="avaliacao-data">1 semana atrás</div>
+                    </div>
+                    <div class="avaliacao-card">
+                        <div class="avaliacao-header">
+                            <span class="avaliacao-nome">Verônica Lima</span>
+                            <span class="avaliacao-stars">★★★★★</span>
+                        </div>
+                        <p class="avaliacao-texto">"Melhor investimento que fiz! Aplicação de colágeno deixou minha pele impecável. Recomendo muito a todos!"</p>
+                        <div class="avaliacao-data">5 dias atrás</div>
+                    </div>
+                    <div class="avaliacao-card">
+                        <div class="avaliacao-header">
+                            <span class="avaliacao-nome">Thiago Pereira</span>
+                            <span class="avaliacao-stars">★★★★★</span>
+                        </div>
+                        <p class="avaliacao-texto">"Adorei! Realizei harmonização facial e ficou perfeito. A clínica tem ambiente aconchegante e equipe dedicada!"</p>
+                        <div class="avaliacao-data">3 dias atrás</div>
+                    </div>
+                    <div class="avaliacao-card">
+                        <div class="avaliacao-header">
+                            <span class="avaliacao-nome">Larissa Alves</span>
+                            <span class="avaliacao-stars">★★★★★</span>
+                        </div>
+                        <p class="avaliacao-texto">"Fiz tratamento de celulite e os resultados foram excelentes! Voltei minha confiança. Muito obrigada Dra. Wendrea!"</p>
+                        <div class="avaliacao-data">2 dias atrás</div>
+                    </div>
+                    <div class="avaliacao-card">
+                        <div class="avaliacao-header">
+                            <span class="avaliacao-nome">Douglas Santos</span>
+                            <span class="avaliacao-stars">★★★★★</span>
+                        </div>
+                        <p class="avaliacao-texto">"Excelente profissional! Fiz microagulhamento e a Dra. explicou todo o procedimento com clareza. Muito satisfeito!"</p>
+                        <div class="avaliacao-data">1 semana atrás</div>
+                    </div>
+                    <div class="avaliacao-card">
+                        <div class="avaliacao-header">
+                            <span class="avaliacao-nome">Gabriela Rocha</span>
+                            <span class="avaliacao-stars">★★★★★</span>
+                        </div>
+                        <p class="avaliacao-texto">"Fiz limpeza de pele profunda e preenchimento. Os resultados são incríveis! Clínica com atendimento de primeira qualidade!"</p>
+                        <div class="avaliacao-data">3 dias atrás</div>
+                    </div>
+                    <div class="avaliacao-card">
+                        <div class="avaliacao-header">
+                            <span class="avaliacao-nome">Bruno Ferreira</span>
+                            <span class="avaliacao-stars">★★★★★</span>
+                        </div>
+                        <p class="avaliacao-texto">"Muito bom! Realizei preenchimento facial e ficou natural. Dra. Wendrea tem muita experiência e técnica impecável!"</p>
+                        <div class="avaliacao-data">4 dias atrás</div>
+                    </div>
+                    <div class="avaliacao-card">
+                        <div class="avaliacao-header">
+                            <span class="avaliacao-nome">Sophia Martins</span>
+                            <span class="avaliacao-stars">★★★★★</span>
+                        </div>
+                        <p class="avaliacao-texto">"Incrível! Fiz protocolo de rejuvenescimento facial e meu rosto ficou muito mais jovem. Muito satisfeita com os resultados!"</p>
+                        <div class="avaliacao-data">6 dias atrás</div>
+                    </div>
+                    <div class="avaliacao-card">
+                        <div class="avaliacao-header">
+                            <span class="avaliacao-nome">Monica Santos</span>
+                            <span class="avaliacao-stars">★★★★★</span>
+                        </div>
+                        <p class="avaliacao-texto">"Fiz o curso de Toxina Botulínica e foi excelente! Dra. Wendrea ensina com maestria. Agora estou aplicando com segurança!"</p>
+                        <div class="avaliacao-data">2 semanas atrás</div>
+                    </div>
+                    <div class="avaliacao-card">
+                        <div class="avaliacao-header">
+                            <span class="avaliacao-nome">Ricardo Oliveira</span>
+                            <span class="avaliacao-stars">★★★★★</span>
+                        </div>
+                        <p class="avaliacao-texto">"Curso de Intradermoterapia fantástico! Conteúdo completo, prática excelente. Recomendo para todos os profissionais!"</p>
+                        <div class="avaliacao-data">1 semana atrás</div>
+                    </div>
+                    <div class="avaliacao-card">
+                        <div class="avaliacao-header">
+                            <span class="avaliacao-nome">Camila Neves</span>
+                            <span class="avaliacao-stars">★★★★★</span>
+                        </div>
+                        <p class="avaliacao-texto">"O curso de PEIM superou minhas expectativas! A Dra. é didática e paciente. Saí confiante para aplicar os procedimentos!"</p>
+                        <div class="avaliacao-data">10 dias atrás</div>
+                    </div>
+                    <div class="avaliacao-card">
+                        <div class="avaliacao-header">
+                            <span class="avaliacao-nome">Andréa Silva</span>
+                            <span class="avaliacao-stars">★★★★★</span>
+                        </div>
+                        <p class="avaliacao-texto">"Melhor investimento na minha carreira! Curso de Toxina com prática supervisionada. Agora tenho clientes satisfeitos!"</p>
+                        <div class="avaliacao-data">3 semanas atrás</div>
+                    </div>
+                    <div class="avaliacao-card">
+                        <div class="avaliacao-header">
+                            <span class="avaliacao-nome">Lucas Pereira</span>
+                            <span class="avaliacao-stars">★★★★★</span>
+                        </div>
+                        <p class="avaliacao-texto">"Curso de Intradermoterapia impecável! Didática excelente e material de qualidade. Já estou aplicando no meu consultório!"</p>
+                        <div class="avaliacao-data">9 dias atrás</div>
+                    </div>
+                    <div class="avaliacao-card">
+                        <div class="avaliacao-header">
+                            <span class="avaliacao-nome">Patricia Gois</span>
+                            <span class="avaliacao-stars">★★★★★</span>
+                        </div>
+                        <p class="avaliacao-texto">"Curso PEIM com a Dra. Wendrea foi sensacional! Certificado reconhecido e muito conhecimento prático. Super recomendo!"</p>
+                        <div class="avaliacao-data">1 semana atrás</div>
+                    </div>
+                    <div class="avaliacao-card">
+                        <div class="avaliacao-header">
+                            <span class="avaliacao-nome">Fernanda Costa</span>
+                            <span class="avaliacao-stars">★★★★★</span>
+                        </div>
+                        <p class="avaliacao-texto">"Fiz o curso de Toxina Botulínica e amei! Instruções claras, material atualizado e suporte da Dra. é excelente!"</p>
+                        <div class="avaliacao-data">2 semanas atrás</div>
+                    </div>
+                    <div class="avaliacao-card">
+                        <div class="avaliacao-header">
+                            <span class="avaliacao-nome">Gustavo Rocha</span>
+                            <span class="avaliacao-stars">★★★★★</span>
+                        </div>
+                        <p class="avaliacao-texto">"Curso de Intradermoterapia foi transformador! Aprendi técnicas avançadas com uma das melhores do mercado!"</p>
+                        <div class="avaliacao-data">8 dias atrás</div>
+                    </div>
+                    <div class="avaliacao-card">
+                        <div class="avaliacao-header">
+                            <span class="avaliacao-nome">Marisa Ferreira</span>
+                            <span class="avaliacao-stars">★★★★★</span>
+                        </div>
+                        <p class="avaliacao-texto">"Curso PEIM completo e profissional! Dra. Wendrea domina o assunto e passa com segurança. Voltaria novamente!"</p>
+                        <div class="avaliacao-data">5 dias atrás</div>
+                    </div>
                 </div>
-
-                <div class="avaliacao-card">
-                    <div class="avaliacao-header">
-                        <span class="avaliacao-nome">Cliente Nome</span>
-                        <span class="avaliacao-stars">★★★★★</span>
-                    </div>
-                    <p class="avaliacao-texto">
-                        "Ambiente acolhedor e procedimentos com qualidade de primeira. Super satisfeita com meus resultados!"
-                    </p>
-                    <div class="avaliacao-data">Há 1 mês</div>
-                </div>
-
-                <div class="avaliacao-card">
-                    <div class="avaliacao-header">
-                        <span class="avaliacao-nome">Cliente Nome</span>
-                        <span class="avaliacao-stars">★★★★★</span>
-                    </div>
-                    <p class="avaliacao-texto">
-                        "Profissional competente e carinhosa. Ficou melhor do que esperava! Definitivamente voltarei."
-                    </p>
-                    <div class="avaliacao-data">Há 1 mês</div>
+                <div class="carousel-dots-avaliacoes">
+                    <div class="dot-avaliacao active" onclick="goToSlideAvaliacoes(0)"></div>
+                    <div class="dot-avaliacao" onclick="goToSlideAvaliacoes(1)"></div>
+                    <div class="dot-avaliacao" onclick="goToSlideAvaliacoes(2)"></div>
+                    <div class="dot-avaliacao" onclick="goToSlideAvaliacoes(3)"></div>
+                    <div class="dot-avaliacao" onclick="goToSlideAvaliacoes(4)"></div>
+                    <div class="dot-avaliacao" onclick="goToSlideAvaliacoes(5)"></div>
                 </div>
             </div>
-
-            <div class="google-logo">
-                <div class="google-logo-text">Avaliação no Google</div>
-                <div class="google-rating">4.9</div>
-                <div class="google-stars">★★★★★</div>
-                <div style="font-size: 12px; margin-top: 8px; opacity: 0.7;">Baseado em 145 avaliações</div>
             </div>
         </div>
     </section>
@@ -1219,54 +2618,164 @@
     <!-- FOOTER -->
     <footer class="footer" id="contato">
         <div class="footer-content">
+            <div class="footer-section footer-logo-social">
+                <div class="footer-logo">
+                    <img src="Fotos/Logo.png" alt="Logo Clínica Burgarelli">
+                </div>
+                <div class="footer-social-links">
+                    <a href="https://www.instagram.com/dra.wendreaburgarelli/" target="_blank" class="social-icon instagram" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/" target="_blank" class="social-icon facebook" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.youtube.com/" target="_blank" class="social-icon youtube" title="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
             <div class="footer-section">
                 <h3>Clínica Burgarelli</h3>
                 <p>Especializada em procedimentos estéticos com tecnologia de ponta e profissionais qualificados.</p>
             </div>
             <div class="footer-section">
                 <h3>Contato</h3>
-                <p>
-                    Telefone: (XX) XXXXX-XXXX<br>
-                    Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2e4d41405a4f5a416e4c5b5c494f5c4b424247004d4143">[email&#160;protected]</a><br>
-                    Endereço: Sua Rua, Número - Cidade
-                </p>
+                <p><strong>Telefone:</strong> (27) 98826-2007<br><strong>Endereço:</strong> R. José Alexandre Buaiz, 350 - Enseada do Suá, Vitória - ES, 29050-545, Edifício Affinity Work</p>
             </div>
             <div class="footer-section">
                 <h3>Horário de Funcionamento</h3>
-                <p>
-                    Segunda a Sexta: 9h - 18h<br>
-                    Sábado: 9h - 13h<br>
-                    Domingo: Fechado
-                </p>
+                <p>Segunda a Sexta: 08:00 - 17:00<br>Terça-Feira: 08:00 - 17:00<br>Quarta-Feira: 08:00 - 17:00<br>Quinta-Feira: 08:00 - 17:00<br>Sexta-Feira: 08:00 - 17:00<br>Sábado: Fechado<br>Domingo: Fechado</p>
             </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2024 Clínica Burgarelli. Todos os direitos reservados. | Realce a sua beleza natural com a ciência</p>
+            <div class="footer-security">
+                <img src="https://www.google.com/transparencyreport/safebrowsing/badges/logo/badge.png" alt="Site Seguro" title="Este site é certificado como seguro pelo Google">
+                <span>Site Seguro por SSL</span>
+            </div>
         </div>
     </footer>
 
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        // Carousel dots interaction
         const dots = document.querySelectorAll('.dot');
+        const galleryItems = document.querySelectorAll('.gallery-item');
         let currentSlide = 0;
+        const itemsPerSlide = 4;
 
         dots.forEach((dot, index) => {
             dot.addEventListener('click', () => {
                 dots.forEach(d => d.classList.remove('active'));
                 dot.classList.add('active');
                 currentSlide = index;
+                updateGallery();
             });
         });
 
-        // Auto-rotate carousel every 5 seconds
+        function updateGallery() {
+            const startIndex = currentSlide * itemsPerSlide;
+            galleryItems.forEach((item, index) => {
+                item.style.display = (index >= startIndex && index < startIndex + itemsPerSlide) ? 'block' : 'none';
+            });
+        }
+
+        updateGallery();
+
         setInterval(() => {
             currentSlide = (currentSlide + 1) % dots.length;
             dots.forEach(d => d.classList.remove('active'));
             dots[currentSlide].classList.add('active');
+            updateGallery();
         }, 5000);
 
-        // Smooth scroll for navigation links
+        // Carrosel de Avaliações
+        let currentAvaliacaoSlide = 0;
+        const avaliacaoCards = document.querySelectorAll('.avaliacao-card');
+        const dotsAvaliacoes = document.querySelectorAll('.dot-avaliacao');
+        const cardsPerSlide = 3;
+
+        function goToSlideAvaliacoes(index) {
+            currentAvaliacaoSlide = index;
+            updateAvaliacoesSlide();
+        }
+
+        function updateAvaliacoesSlide() {
+            const startIndex = currentAvaliacaoSlide * cardsPerSlide;
+            avaliacaoCards.forEach((card, index) => {
+                card.style.display = (index >= startIndex && index < startIndex + cardsPerSlide) ? 'block' : 'none';
+            });
+            
+            dotsAvaliacoes.forEach((dot, index) => {
+                dot.classList.remove('active');
+                if (index === currentAvaliacaoSlide) {
+                    dot.classList.add('active');
+                }
+            });
+        }
+
+        updateAvaliacoesSlide();
+
+        setInterval(() => {
+            currentAvaliacaoSlide = (currentAvaliacaoSlide + 1) % dotsAvaliacoes.length;
+            updateAvaliacoesSlide();
+        }, 6000);
+
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                const
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Funções das modals
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Função para abrir tabs
+        function openTab(evt, tabName) {
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            const tabButtons = document.querySelectorAll('.tab-button');
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+
+        // Fechar modal ao clicar fora
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Fechar modal com ESC
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                document.querySelectorAll('.modal').forEach(modal => {
+                    if (modal.style.display === 'block') {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
